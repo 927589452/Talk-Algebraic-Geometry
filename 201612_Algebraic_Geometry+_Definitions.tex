@@ -1,16 +1,66 @@
-#normally you would have a begin document and a preamble here, but not today
+//normally you would have a begin document and a preamble here, but not today
 
-# i am using custom defined environments for my LaTeX Session
+// i am using custom defined environments for my LaTeX Session
 
-\begin{defn}[Complex of $R$-modules]
-# the layout here is begin{environment}[title]
-# and i can just start typing text
-# are comments as they often are
+\begin{defn}[Complex of $R$-modules \nocite[Eis1]{1.10} ]
+// the layout here is begin{environment}[title]
+// and i can just start typing text
+// are comments as they often are
 
 A \bold{complex} of $R$-Modules is a sequence of modules \( F_{i} \)
-# it is not needed to put every low index into brackets, but it is a 
-# good habit as bigger indexes may be broken up otherwise
+
+// it is not needed to put every low index into brackets, but it is a 
+// good habit as bigger indexes may be broken up otherwise
+
 and maps \( F_{i} to F_{i-1} \) such that the compositions \( F_{i+1} \to F_{i} \to \F_{i-1} \) are all zero.
-# as you have seen i can start math mode by either using $ or \( 
+
+// as you have seen i can start math mode by either using  \$ and \(  \) 
+// and my LaTeX did become quite rusty since the last time i used it
+// that line gives a hint on your current mode
+
+The \bold{homology} of this complex at \( F_{i} \) is the module 
+\[
+	// this starts the big math mode
+	\ker \left( F_{i} \to F_{i-1} \right)   \/ \im \left( F_{i+1} \to F_{i} \right)
+\]
+
+// let us not forget to put a reference, where this definition comes from
+// Eis1 Eisenbud-Harris Algebraic Geometry - A second course
+
+A \bold{free resolution} of an \( R\)-module \( M \)
+
+// \( \) is the newer and more resilient way of starting math environments
+
+is a complex
+\[
+	\mathcal{F}: \hdots \to F_{n} \overset{\to}{\phi_{n}} 
+	\hdots \to F_{1} \overset{\to}{\phi_{1}} F_{0}
+\]
+of free \(R\)-Modules such that \( \coker \phi_{1} = M \) 
+and \( \mathcal{F} \)  is exact (sometimes we add `` \( \to 0 \) '' to the right of \(\mathcal{F}\) and then insist that \(\mathcal{F}\) be exact except at \( F_{0} \) ).
+We shall sometimes abuse this notation and say that an exact sequence 
+\[
+	\mathcal{F}: \hdots \to F_{n} \overset{\to}{\phi_{n}} 
+	\hdots \to F_{1} \overset{\to}{\phi_{1}} F_{0}
+	\to M \to 0
+\]
+is a resolution of \( M \).  
+The image of the map \( \phi_i \) is called the ith syzygy module of \(M \).
+A resolution \( \mathcal{F }\) is a \bold{graded free resolution } if \( R \) is a graded ring, the \(  F_{i}\) are graded free modules, and the maps are homogeneous maps of degree 0.
+Of course only graded modules can have graded free resolutions.
+If for some \( n < \inf \) we have \( F_{n+1}=0 \), 
+but \( F_{i} \neq 0 \forall 0 \le i \le n \), then we shall say that 
+\( \mathcal{F}\) is a \bold{finite resolution of length} \( n\).
+\end{defn}
+
+// wow that was a piece of work, but there are more to come yet.
+
+
+
+
+
+// BTW even though there are linebreaks in the code, there will be no line breaks in the compiled document.
+// as you may see the structure is becoming increasingly complex; therefore we should try to get these structure visable
+
 
 
