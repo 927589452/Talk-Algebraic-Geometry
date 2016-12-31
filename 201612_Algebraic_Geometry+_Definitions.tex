@@ -136,9 +136,42 @@ then every finitely generated graded \( R\)-Module has a finite graded free reso
 	for every \( i \). Any such \( f' \) is called a \bold{remainder} of \( f \) with respect to \( g_1,\dots,d_t \), and an expression 
 	\( f=\sum f_i g_i + f' \)
 	satisfying the condition of the proposition is called a \bold{standard expression} for \( f \) in terms of \( g_i \).
+\end{propdef}
+\newtheorem{algo}[Algorithmus]
+\begin{algo}[Division Algorithm]
+	Lef \( F \) be a free \( S\)-module with basis and a fixed monomial order. 
+	If 
+	\( f,g_1,\dots,g_t \in F \)
+	, then we may produce a standard expression
+	\[
+		f=\sum m_u g_{s_u} +f'
+	\]
+	for \(f\) with respect to 
+	\( g_1,\dots,g_t \)
+	by defining the indices \(s_u\)
+	and the terms \(m_u\) inductively.
+	Having chosen 
+	\( s_1,\dots,s_p \)
+	and 
+	\( m_1,\dots,m_p\),
+	if 
+	\[
+		f'_p:=f-\sum_{u=1}^{p} m_u g_{s_u} \neq 0
+	\]
+and \( m \) is the maximal term of \(f'_p \) that is divisible by some \( in\left( g_i \right) \),
+then we choose
+	\[
+		s_{p+1}=i , \\
+		m_{p+1}=m / in\left( g_i \right)
+	\]
+	This process terminates when either 
+	\( f'_p=0 \)or no \( in\left( g_i \right) \) divides a monomial of 
+	\( f'_p\);
+	the remainder \(f'\) is then the last \( f'_p \) produced.
 \end{algo}
 
 
+	
 
 \end{document}
 
