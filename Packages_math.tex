@@ -1,10 +1,22 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{nicefrac}
 
-\newtheorem{satz}{Satz} 
-\newtheorem{defi}{Definition} 
-\newtheorem{lem}{Lemma} 
-\newtheorem{beh}{Behauptung} 
-\newtheorem{bsp}{Beispiel} 
+\newtheorem{thm}{Theorem}
+%\newcounter{thm}
+\newtheorem{satz}[thm]{Satz} 
+\newtheorem{propdef}[thm]{Proposition-Definition}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{algo}{Algorithmus}
+%\newtheorem{defi}[thm]{Definition} 
+\newtheorem{lem}[thm]{Lemma} 
+\newtheorem{beh}[thm]{Behauptung} 
+\newtheorem{bsp}[thm]{Beispiel} 
+
+%mathoperators
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\in}{in}
 
