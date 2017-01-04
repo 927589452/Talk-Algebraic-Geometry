@@ -1,0 +1,141 @@
+%!TeX spellcheck = de_DE
+%!TeX encoding = utf8
+
+\documentclass{article}
+\input{./preamble}
+
+\begin{document}
+
+
+\section{Einleitung}
+	In diesem Vortrag geht es vorallem um Syzygien und Freie Aufl\"osungen, 
+	was der Title nahe legt.
+	Was der Title aber nicht erf\"ullen kann, 
+	ist es uns einen Grund zu geben nach diesen Dingen zu suchen.
+	Fangen wir doch damit an, 
+	wie eine Syzygie definiert ist um zu sehen
+	, was sie ist.
+	Auf dem Weg sammeln wir noch ein paar Grundlagen mit ein:
+	\begin{defn}[\nocite[Eis1] ]
+		Ein \bf{Komplex von \( R \)-Modulen} 
+		ist eine Sequenz von Modulen 
+		\( F_{i} \)
+		und Abbildungen
+		\( F_{i} \to F_{i-1} \),
+		sodass f\"ur alle 
+		\( i \) 
+		die Komposition
+		\( F_{i+1} \to F_{i} \to F_{i-1} \)
+		Null wird. \\
+		Die \bf{Homologie} dieses Komplexes in 
+		\( F_{i} \)
+		ist der  Modul
+		\[
+			\ker\left( F_{i} \to F_{i-1 } \right) \big/ \im \left( F_{i+1} \to F_{i} \right).
+		\]
+		Eine \bf{freie Aufl\"osung} eines 
+		\(R\)-Moduls 
+		\(M\)
+		ist ein Komplex
+		\[
+			\mathcal{F}: \dots \to F_{n} 
+			\overset{\phi_{n}}{\to} 
+			\dots \to F_{1}
+			\overset{\phi_{1}}{\to} F_{0}
+		\]
+		von freien
+		\(R\)-Modulen, sodass 
+		\( \coker \phi_{1} = M \)
+		und
+		\( \mathcal{F} \)
+		exakt ist.
+		(Man schreibt auch gelegentlicht ein 
+		\( \to 0 \) 
+		an das Ende des Komplexes
+		und fordert Exaktheit ausser in 
+		\( F_{0} \).
+		Diese schreibweise wird haeufig missbraucht,
+		um zu sagen, 
+		dass die exakte Sequenz
+		\[
+			\mathcal{F}: \dots \to F_{n} 
+			\overset{\phi_{n}}{\to} 
+			\dots \to F_{1}i
+			\overset{\phi_{1}}{\to} F_{0}
+			\to M 
+			\to 0
+		\]
+		eine Aufloesung von 
+		\(M \)
+		ist.
+		Das Bild von
+		\( \phi_{i} \)
+		nennen wir die
+		\underline{i-te Syzygie} 
+		von 
+		\( M \).\\
+		Ein Aufl\"osung heisst freie, graduierte Aufl\"osung,
+		wenn 
+		\( R \) ein graduierter Ring,
+		die 
+		\( F_{i} \)
+		graduierte freie Module
+		und die Abbildungen homogen vom Grad 0 sind.
+		Wenn es ein
+		\( n < \inf \) 
+		gibt, sodass 
+		\(F_{n+1}=0 \),
+		aber 
+		\( F_{i} \neq 0 \forall 0 \le i \le n \),
+		nennen wir 
+		\( \mathcal{F} \) 
+		eine endliche Aufl\"osung von L\"ange 
+		\( n \).
+	\end{defn}
+	Hier eine kurze Auffrischung der Begrifflichkeiten:
+	\begin{defn}[Freier Modul\cite{Eis1}{0.3}]
+		Ein freier 
+		\(R\)-Modul
+		ist ein Modulm der isomorph zu einen direkten Summe von 
+		\( R \)
+		Kopien ist.
+	\end{defn}
+	\begin{bsp}
+		Ein sehr einfaches Beispiel ist 
+		\[
+			M:= \mathbb{R} \dot x \oplus
+			\mathbb{R} \dot y \oplus
+			\mathbb{R} \dot z =
+			\mathbb{R}^3
+		\]
+	\end{bsp}
+	\begin{defn}[Graduierter Ring\cite{Eis1}{1.5}]
+		Ein \bf{graduierter Ring} ist ein Ring 
+		\( R \)
+		zusammen mit einer direkten Summenzerlegung
+		\[
+			R=R_{0} \oplus R_{1} \oplus R_{2} \oplus \dots 
+			\text{ als abelsche Gruppen,}
+		\]
+		sodass 
+		\[
+			R_{i}R_{j} \subset R_{i+1} \text{for} i,j \ge 0.
+		\]
+	\end{defn}
+	\begin{bsp}
+		Der einfachste graduierte Ring ist der Ring Polynome
+		\( S = k\left[ x_{1}, \dots ,x_{r} \right] \)
+		mit der Graduierung 
+		\[
+			S=S_{0} \oplus S_{1} \oplus \dots ,
+		\]
+		wobei 
+		\( S_{d} \) 
+		der Vektorraum der homogenen Polynome vom Grad
+		\( d \) 
+		ist.
+	\end{bsp}
+
+
+
+\end{document}
