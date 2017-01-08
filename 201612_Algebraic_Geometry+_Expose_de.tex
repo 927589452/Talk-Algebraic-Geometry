@@ -1,6 +1,7 @@
 %!TeX spellcheck = de_DE
 %!TeX encoding = utf8
 
+
 \documentclass{article}
 \input{./preamble}
 
@@ -322,8 +323,91 @@ section{Gr\"obner Basen}
 	von den
 	\( \sigma_{ij} \)
 	erzeugt wird.
+	\begin{proof}
+		\( \ker \phi\)
+		ist ein 
+		\( k \)-Vektorraum ,
+		also k\"onnen wir annehmen, dass 
+		\( \ker \phi = \underset{n \in F }{\oplus} \),
+		wobei
+		\[ 
+			\left( \ker \phi \right)_{n} 
+			= \left\{ 
+				\sum a_{v} n_{v} \epsilon_{v} \in \ker \phi 
+				\big| m_{v} \text{divides} n, 
+				/ n_{v} = n \/ m_{v}, 
+				/ \text{and} a_{v} \in k  
+			\right\}
+		\]
+		geschrieben wird.
+		Angenommen
+		\[
+			\sigma = \sum p_{i} \epsilon_{i} \in S^{t}, \qquad p_{i} \in S
+		\]
+		ist eine Syzygie,
+		sodass
+		\( \sum P_{i}m_{i} =0 \).
+		F\"ur jedes Monom 
+		\( n \)
+		aus 
+		\(F\),
+		das in einem der 
+		\( p_{j}m_{j} \)
+		vorkommt,
+		und f\"ur alle 
+		\(i\) 
+		sei 
+		\( p_{i,n}\)
+		der Term von
+		\( p_{i} \),
+		sodass 
+		\( p_{i,n}m_{i} \)
+		ein Vielfaches von 
+		\( n\)
+		ist.
+		Es muss gelten
+		\( \sum p_{i,n} m_{i}=0 \),
+		damit 
+		\( \sum p_{i,n} \epsilon_{i} \)
+		aus 
+		\( \left( \ker \phi \right)_{n}\).
+		Nehmen wir an, dass 
+		\( \sigma= \sum a_{v} n_{v}^{\epsilon} 
+		\left( \ker \phi \right)_{n} \).
+		wenn 
+		\( \sigma \neq 0 \).
+		dann sind mindestens zwei der 
+		\( a_{v} n_{v} \neq 0 \),
+		da 
+		\( \sigma \) eine Syzygie ist.
+		OBdA die 
+		\(i\)-te 
+		und die
+		\(j\)-te
+		, wobei 
+		\( i<j \).
+		Es folgt 
+		\( n \) 
+		wird von
+		\( m_{i} \)
+		und 
+		\( m_{j} \) 
+		geteilt.
+		und somit ist 
+		\( n_{i} \)
+		teilbar durch
+		\[
+			\LCM\left( m_{i},m_{j} \right)/m_{i} 
+			= m_{j} / \GCD\left( m_{i},m_{j} \right) 
+			= m_{ji} 
+		\]
+		Somit k\"onnen wir ein Vielfaches von 
+		\( \left( n_{i}/m_{ji} \right)\sigma_{ij} \)
+		von 
+		\( \sigma \) 
+		abziehen um unsere Relation zu reduzieren.
+	\end{proof}
 \end{lem}
-
 \input{./bibtex}
 
 \end{document}
