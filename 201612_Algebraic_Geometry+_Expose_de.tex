@@ -203,14 +203,54 @@
 		\end{proof}
 	\end{bsp}
 
-\section{Gr\"obner Basen}
+section{Gr\"obner Basen}
+\begin{defn}[Initialer Term \cite{Eis1}{325}]
+	Wenn 
+	\( > \)
+	eine Ordnung auf Mononomen ist,
+	dann definieren wir f\"ur alle 
+	\( f \in F \)
+	den \textbf{initialen Term von \( f\) },
+	geschrieben als 
+	\( \ini_{>} \left( f \right) \),
+	als den gr\"ossten Term von 
+	\( f \) 
+	bez\"uglich der Ordnung
+	\( > \).
+	Wenn 
+	\( M \) 
+	ein Untermodul von 
+	\( F \) 
+	ist,
+	dann bezeichnet 
+	\( \ini_{>} \left( M \right) \)
+	den Untermodul, 
+	der von 
+	\( \left\{ \ini_{>} \left( f \right) \big| f \in F \right\}\)
+	erzeugt wird.
+	Wir werden oft 
+	\( \ini_{>} \)
+	mit 
+	\( \ini \)
+	abk\"urzen,
+	wenn die Ordnung klar ist.
+\end{defn}
+\begin{bsp}
+	Sei 
+	\( >_{lex} \) 
+	Die Ordung in der gilt
+	\( x > y \),
+	dann ist 
+	\( \ini_{>_lex} \left( x^{2}+xy +y^{2} \right)=x^{2} \)
+
+\end{bsp}
 \begin{defn}[Gr\"obnerbasis \cite{Eis1}{328}]
 	Eine \textbf{Gr\"obnerbasis} bez\"uglich einer Ordnung 
 	\( > \)
 	auf einem freien Modul mit Basis
 	\(F \)
 	ist eine Menge von Elementen
-	\( g_{1},dots,g_{t} \in F \)
+	\( g_{1},dots,g_{t} \ini F \)
 	,sodass wenn 
 	\( M \) 
 	ein Untermodul von 
@@ -219,10 +259,10 @@
 	\( g_{1}, \dots , g_{t} \)
 	ist,
 	gilt, dass die
-	\( \in_{>}  \left(  g_{1} \right),
+	\( \ini_{>}  \left(  g_{1} \right),
 	\dots,
-	\in_{>} \left( g_{t} \right) \)
-	\( \in_{>} \left( M \right) \)
+	\ini_{>} \left( g_{t} \right) \)
+	\( \ini_{>} \left( M \right) \)
 	erzeugen. \\
 	Wir sagen dann,
 	dass
@@ -232,7 +272,58 @@
 	sind.
 
 \end{defn}
-	
+
+\begin{nota}[\cite{Eis1}{322}\label{syzygygenerationnotation}]
+	Sei 
+	\( F \) 
+	ein freies Modul mit Basis 
+	und
+	\( M \)
+	Untermodul von 
+	\( F \)
+	der von 
+	\( m_{1} , \dots , m_{t} \)
+	erzeugt wird.
+	Sei
+	\begin{align*}
+		\phi:	& \oplus_{j=1}^{t} S\epsilon_{j} &\to   F \\
+			& \phi\left( \epsilon_{j} \right) &=  m_{j}
+	\end{align*}
+	die Abbildung eines freien Moduls, dessen Bild
+	\( M \)
+	ist.
+	F\"ur alle Indexpaare 	
+	\( i,j \),
+	sodass 
+	\( m_{i}\)
+	und 
+	\( m_{j}\)
+	dasselbe Basiselement von 
+	\( F \),
+	definieren wir 
+	\[
+		m_{ij} := m_{i}/\GCD\left( m_{i},m_{j} \right) 
+	\],
+	wobei wir die 
+	\( \sigma_{ij}\)
+	wie folgt als Elemente von 
+	\( \ker \phi \)
+	definieren:
+	\[
+		\sigma_{ij} := m_{ji}\epsilon_{i}-m_{ij}\epsilon_{j} .
+	\]
+
+\end{nota}
+
+\begin{lem}[\cite{Eis1}{15.1}\label{syzygygen}]
+	Mit der Notation  \ref{syzygygenerationnotation} gilt,
+	dass 
+	\( \ker \phi \)
+	von den
+	\( \sigma_{ij} \)
+	erzeugt wird.
+\end{lem}
+
 \input{./bibtex}
 
 \end{document}
