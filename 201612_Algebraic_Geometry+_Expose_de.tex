@@ -497,7 +497,7 @@
 	\end{align*}
 
 \end{algo}
-\begin{defn}[\cite{Eis1}{334}]
+\begin{defn}[\cite{Eis1}{334}\label{taunotation}]
 	Wir definieren
 	\[
 		\tau_{ij}:=
@@ -515,36 +515,39 @@
 	dasselbe Basiselement von \( F \)
 	enthalten.
 \end{defn}
-{\color{red}
 \begin{thm}[Schreyer \cite{Eis1}[15.10]
-With the notation as above, suppose that
-\( g_1,\dots,g_t\)
-is a Gr\"obner basis.
-Let \( > \) be the monomial order on
-\( \oplus_{j=1}^t S \epsilon_{j} \)
-defined by taking
-\( m \epsilon_{u} > n \epsilon_{v} \)
-\(\iff\)
-\[
-\in\left(  m g_{u} \right) > \in\left( n g_{v} \right) 
-\text{with respect to the given order on} F 
-\]
-or
-\[
-\in\left( m g_{u} \right) = \in\left( n g_{v} \right) 
-\left( \text{up to a scalar} \right) \text{but} u < v.
-\]
-The
-\( \tau_{ij} \)
-generate the syzygies on the
-\( g_{i} \).
-In fact, the
-\( \tau_{ij} \)
-are a Gr\"obner basis for the syzygies with respect to the order \( > \),
-and
-\( \in\left( \tau_{ij} \right) = m_{ji}\epsilon_{i}.\)
+	Mit der Notation von \ref{taunotation}, 
+	konnen wir annehmen,
+	dass
+	\( g_1,\dots,g_t\)
+	eine Gr\"obnerbasis sind.
+	Sei jetzt 
+	\( > \) 
+	eine Monomordnung auf 
+	\( \oplus_{j=1}^t S \epsilon_{j} \),
+	f\"ur die gilt
+	\( m \epsilon_{u} > n \epsilon_{v} \)
+	\(\iff\)
+	\[
+		\in\left(  m g_{u} \right) > \in\left( n g_{v} \right) 
+		\text{bez\"uglich der Ordnung auf } F 
+	\]
+	oder
+	\[
+		\in\left( m g_{u} \right) = \in\left( n g_{v} \right) 
+		\left( \text{bis auf Vielfachheit} \right) \text{but} u < v.
+	\].
+	Die
+	\( \tau_{ij} \) 
+	erzeugen die Syuygien auf den
+	\( g_{i} \).
+	Insbesondere sind die
+	\( \tau_{ij} \)
+	eine Gr\"obnerbasis der Syzygien bez\"uglich der Ordnung
+	\( > \)
+	und 
+	\( \in\left( \tau_{ij} \right) = m_{ji}\epsilon_{i}.\)
 \end{thm}
-}
 {\color{red}
 \begin{proof}
 We show first that the initial term of
