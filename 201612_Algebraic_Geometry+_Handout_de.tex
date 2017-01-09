@@ -73,7 +73,77 @@
 	ist dann 
 	\( f'_p \).
 \end{algo}
-
+\begin{nota}[\cite{Eis1}{331}\label{criterionnotation}]
+	Sei
+	\( F \)
+	ein freier Modul \"uber
+	\(S\)
+	mit Basis und Monomordnung
+	\( > \).
+	Seien
+	\( 0 \neq g_{1},\dots,g_{t} \in F\)
+	und
+	\( \oplus S \epsilon_{i} \)
+	ein freier Modul mit Basis
+	\( \left\{ \epsilon_{i} \right\} \)
+	die den
+	\( \left\{ g_{i} \right\}\)
+	aus
+	\( F \)
+	\"uber die folgenden Abbildungen
+	\begin{align*}
+	\phi:& \oplus S \epsilon_{i} & F \\
+	& \epsilon_{i} & \mapsto g_{i} 
+	\end{align*}
+	entsprechen. \\
+	F\"ur jedes Indexpaar
+	\( i, j \),
+	sodass
+	\( \ini \left( g_{i} \right) \)
+	und
+	\( \ini \left( g_{j} \right) \)
+	dasselbe Basiselement von
+	\( F \)
+	enthalten,
+	definieren wir
+	\[
+	m_{ij} 
+	= \ini \left( g_{i} \right) 
+	/ \GCD \left( \ini\left( g_{i} \right), 
+	\ini \left( g_{j} \right) \right) \in S
+	\]
+	und setzen
+	\[
+	\sigma_{ij} 
+	= m_{ji} \epsilon_{i} 
+	- m_{ij} \epsilon_{j}
+	\].
+	Diese
+	\( \sigma_{ij} \)
+	Erzeugen die Syzygie auf den
+	\( \ini \left( g_{i} \right) \)
+	nach \ref{syzygygen}.
+		Desweiteren w\"ahlen wir f\"ur jedes der Indexpaare einen Standardausdruck
+	\[ 
+	m_{ji} g_{i} -m_{ij} g_{j} = \sum f_{u}^{\left( ij \right) } g_{u} + h_{ij}
+	\]
+	f\"ur
+	\(  m_{ji} g_{i} -m_{ij} g_{j} \)
+	bez\"uglich der
+	\( g_{1},\dots , g_{t} \).
+	Man kann sehen,
+	dass
+	\( \ini \left( f_{u}^{ij} g_{u} \right) < \ini \left( m_{ji}g_{i} \right) \)
+	Zur Vereinfachung setzen wir
+	\( h_{ij} = 0 \),
+	falls
+	\( \ini\left( g_{i} \right) \)
+	und
+	\( \ini\left( g_{j} \right) \)
+	verschiedene Basiselemente von
+	\( F \)
+	enthalten.
+\end{nota}
 \begin{thm}[Buchberger Kriterium \cite{Eis1}{15.8}\label{criterion}]
 	Mit der Notation aus \ref{criterionnotation} folgt,
 	dass die 
@@ -85,9 +155,6 @@
 	\( i \)
 	und 
 	\( j\).
-	\begin{proof}
-		{\color{red} REPLACE ME }
-	\end{proof}
 \end{thm}
 
 \begin{algo}[Buchberger Algorithmus \cite{Eis1}{333}]
@@ -137,6 +204,24 @@
 	\end{align*}
 
 \end{algo}
+        \begin{defn}[\cite{Eis1}{334}\label{taunotation}]
+                Wir definieren
+                \[
+                        \tau_{ij}:=
+                        m_{ji}\epsilon_{i} - 
+                        m_{ij} \epsilon_{j} - 
+                        \sum_{u} {f_{u}}^{\left( ij \right) } 
+                        \epsilon_{u} 
+                \],
+                f\"ur
+                \( i < j \),
+                sodass
+                \( \ini \left( g_{i}  \right) \)
+                und
+                \( \ini \left( g_{j}  \right) \)
+                dasselbe Basiselement von \( F \)
+                enthalten.
+        \end{defn}
 
 
 \begin{thm}[Schreyer \cite{Eis1}[15.10]
