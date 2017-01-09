@@ -6,6 +6,7 @@
 \input{./preamble}
 
 \begin{document}
+\maketitle
 \section{Einleitung}
 	In diesem Vortrag geht es vor allem um Syzygien und Freie Aufl\"osungen, 
 	was der Titel nahe legt.
@@ -201,641 +202,641 @@
 			{\color{red} REPLACE ME }
 		\end{proof}
 	\end{bsp}
-
-\section{Gr\"obner Basen}
-\begin{defn}[Initialer Term \cite{Eis1}{325}]
-	Wenn 
-	\( > \)
-	eine Ordnung auf Monomen ist,
-	dann definieren wir f\"ur alle 
-	\( f \in F \)
-	den \textbf{initialen Term von \( f\) },
-	geschrieben als 
-	\( \ini_{>} \left( f \right) \),
-	als den gr\"ossten Term von 
-	\( f \) 
-	bez\"uglich der Ordnung
-	\( > \).
-	Wenn 
-	\( M \) 
-	ein Untermodul von 
-	\( F \) 
-	ist,
-	dann bezeichnet 
-	\( \ini_{>} \left( M \right) \)
-	den Untermodul, 
-	der von 
-	\( \left\{ \ini_{>} \left( f \right) \big| f \in F \right\}\)
-	erzeugt wird.
-	Wir werden oft 
-	\( \ini_{>} \)
-	mit 
-	\( \ini \)
-	abk\"urzen,
-	wenn die Ordnung klar ist.
-\end{defn}
-\begin{bsp}
-	Sei 
-	\( >_{lex} \) 
-	Die Ordung in der gilt
-	\( x > y \),
-	dann ist 
-	\( \ini_{>_{lex}} \left( x^{2}+xy +y^{2} \right)=x^{2} \)
-
-\end{bsp}
-\begin{defn}[Gr\"obnerbasis \cite{Eis1}{328}]
-	Eine \textbf{Gr\"obnerbasis} bez\"uglich einer Ordnung 
-	\( > \)
-	auf einem freien Modul mit Basis
-	\(F \)
-	ist eine Menge von Elementen
-	\( g_{1},\dots,g_{t} \in F,\)
-	sodass wenn 
-	\( M \) 
-	ein Untermodul von 
-	\( F \) 
-	erzeugt von
-	\( g_{1}, \dots , g_{t} \)
-	ist,
-	gilt, dass die
-	\( \ini_{>}  \left(  g_{1} \right),
-	\dots,
-	\ini_{>} \left( g_{t} \right) \)
-	\( \ini_{>} \left( M \right) \)
-	erzeugen. \\
-	Wir sagen dann,
-	dass
-	\( g_{1},\dots,g_{t} \)
-	eine
-	\textbf{Gr\"obnerbasis von \( M \)}
-	sind.
-
-
-\end{defn}
-\begin{propdef}[\cite{Eis1}{15.6}]
-	Sei
-	\( F \) 
-	ein freier 
-	\( S \)-Modul
-	mit einer Basis und {Monomordnung 
-	\(>\).} 
-	Wenn 
-	\( f,g_1,\dots,g_t \in F \) 
-	dann gibt es einen Ausdruck 
-	\[
-		f= \sum f_i g_i +f' \text{mit} f' \in F, f_i \in S_i ,
-	\]
-	bei dem kein 
-	\( f' \)
-	in
-	\( \left( \ini\left(g_1\right),\dots,\ini\left(g_t\right) \right) \) 
-	vorkommt und 
-	\[
-		\ini\left( f \right) \ge \ini\left( f_i g_i  \right)
-	\]
-	f\"ur alle 
-	\( i \).
-	Jedes solches 
-	\( f' \)
-	heisst \textbf{Rest} von 
-	\( f \) 
-	in Bezug auf 
-	\( g_{1},\dots,g_{t} \)
-	und ein Ausdruck 
-	\( f=\sum f_{i} g_{i} + f' \),
-	der die Bedingungen von oben erf\"ullt,
-	heisst
-	\textbf{Standard Ausdruck} f\"ur 
-	\(f\) 
-	ausgedr\"uckt in
-	\( g_{i} \).
-\end{propdef}
-\begin{algo}[Divisionsalgorithmus \cite{Eis1}{15.7}]
-	Sei 
-	\( F \)
-	ein freier 
-	\( S\)-Modul
-	mit Basis und fester Monomordnung.
-	Wenn
-	\( f,g_1,\dots,g_t \in F \),
-	dann k\"onnen wir einen Standard Ausdruck
-	\[
-                f=\sum m_u g_{s_u} +f'
-	\]
-	von
-	\( f \)
-	bez\"uglich 
-	\( g_1,\dots,g_t \)
-	finden,
-	indem wir die Indices
-	\( s_{u} \)
-	und die Terme
-	\(m_{u} \)
-	induktiv definieren.
-	Wenn wir bereits 
-	\( s_1,\dots,s_p \)
-	und
-	\( m_1,\dots,m_p\),
-	gew\"ahlt haben,
-	dann w\"ahlen wir, 
-	falls 
-	\[
-		f'_p:=f-\sum_{u=1}^{p} m_u g_{s_u} \neq 0
-	\]
-	und
-	\( m \) 
-	der maximale Term von 
-	\(f'_p \),
-	der durch eines der der
-	\( in\left( g_i \right) \)
-	teilbar ist,
-	\[
-		s_{p+1}=i , \\
-		m_{p+1}=m / in\left( g_i \right)
-	\].
-	Dieser Vorgang bricht entweder ab, wenn 
-	\( f'_p=0 \) \
-	oder wenn keines der
-	\( in\left( g_i \right) \) 
-	ein Monom aus 
-	\( f'_p\)
-	teilt;
-	der Rest 
-	\(f'\) 
-	ist dann 
-	\( f'_p \).
-\end{algo}
-
-\begin{nota}[\cite{Eis1}{331}\label{criterionnotation}]
-	Sei 
-	\( F \) 
-	ein freier Modul \"uber
-	\(S\)
-	mit Basis und Monomordnung
-	\( > \).
-	Seien
-	\( 0 \neq g_{1},\dots,g_{t} \in F\)
-	und 
-	\( \oplus S \epsilon_{i} \)
-	ein freier Modul mit Basis 
-	\( \left\{ \epsilon_{i} \right\} \)
-	die den 
-	\( \left\{ g_{i} \right\}\)
-	aus 
-	\( F \)
-	\"uber die folgenden Abbildungen 
-	\begin{align*}
-		\phi:& \oplus S \epsilon_{i} & F \\
-		& \epsilon_{i} & \mapsto g_{i} 
-	\end{align*}
-	entsprechen. \\
-	F\"ur jedes Indexpaar 
-	\( i, j \),
-	sodass 
-	\( \ini \left( g_{i} \right) \)
-	und
-	\( \ini \left( g_{j} \right) \)
-	dasselbe Basiselement von
-	\( F \)
-	enthalten,
-	definieren wir
-	\[
-		m_{ij} 
-		= \ini \left( g_{i} \right) 
-		/ \GCD \left( \ini\left( g_{i} \right), 
-		\ini \left( g_{j} \right) \right) \in S
-	\]
-	und setzen
-	\[
-		\sigma_{ij} 
-		= m_{ji} \epsilon_{i} 
-		- m_{ij} \epsilon_{j}
-	\].
-	Diese 
-	\( \sigma_{ij} \)
-	Erzeugen die Syzygie auf den 
-	\( \ini \left( g_{i} \right) \)
-	nach \ref{syzygygen}.
-	Desweiteren w\"ahlen wir f\"ur jedes der Indexpaare einen Standardausdruck 
-	\[ 
-		m_{ji} g_{i} -m_{ij} g_{j} = \sum f_{u}^{\left( ij \right) } g_{u} + h_{ij}
-	\]
-	f\"ur 
-	\(  m_{ji} g_{i} -m_{ij} g_{j} \)
-	bez\"uglich der
-	\( g_{1},\dots , g_{t} \).
-	Man kann sehen, 
-	dass 
-	\( \ini \left( f_{u}^{ij} g_{u} \right) < \ini \left( m_{ji}g_{i} \right) \)
-	Zur Vereinfachung setzen wir
-	\( h_{ij} = 0 \),
-	falls 
-	\( \ini\left( g_{i} \right) \)
-	und 
-	\( \ini\left( g_{j} \right) \)
-	verschiedene Basiselemente von 
-	\( F \)
-	enthalten.
-\end{nota}
-\begin{thm}[Buchberger Kriterium \cite{Eis1}{15.8}\label{criterion}]
-	Mit der Notation aus \ref{criterionnotation} folgt,
-	dass die 
-	\( g_{1},\dots,g_{t} \)
-	eine Gr\"obnerbasis bilden,
-	genau dann wenn 
-	\( h_{ij} \)
-	f\"ur alle 
-	\( i \)
-	und 
-	\( j\).
-	\begin{proof}
-		{\color{red} REPLACE ME }
-	\end{proof}
-\end{thm}
-
-\begin{algo}[Buchberger Algorithmus \cite{Eis1}{333}]
-	Unter den Vorraussetzungen aus \ref{criterion} 
-	sei
-	\( M \),
-	das ein Untermodul von
-	\( F \)
-	und 
-	\( g_{1},\dots,g_{t}\)
-	seien  Erzeuger von 
-	\( M \).
-	Berechne die Reste
-	\( h_{ij} \).
-	Wenn alle 
-	\( h_{ij} = 0 \),
-	dann bilden die 
-	\(g_{i} \)
-	eine Gr\"obnerbasis von 
-	\( M \).
-	Wenn einige der 
-	\( h_{ij} \neq 0 \)
-	dann ersetze 
-	\( g_{1},\dots,g_{t}\)
-	mit 
-	\( g_{1},\dots,g_{t},h_{ij} \)
-	und wiederholen dann den Prozess.
-	Da der von
-	\( g_{1},\dots,g_{t},h_{ij} \)
-	erzeugte Untermodul echt gr\"osser als der von
-	\( g_{1},\dots,g_{t}\)
-	erzeugte Untermodul ist, 
-	und damit terminiert der Prozess nach endlich vielen Schritten.
-	Die obere Schranke 
-	\[
-		b=\left( 
-			\left( r+1 \right)
-			\left( d+1 \right)+1 
-		\right)^{2^{(s+1)}(r+1) }
-	\]	
-	h\"alt f\"ur
-	\begin{align*}	
-		r = &\text{number of variables} \\
-		d = &\text{maximum degree of the polynomials \( g_i\) , and } \\
-		s = &\text{the degree of the Hilbert polynomial } \\
-		    &\text{( this is one less than the dimension; it is between \( 0 \) and \(r-1\) ).}
-	\end{align*}
-
-\end{algo}
-\begin{defn}[\cite{Eis1}{334}\label{taunotation}]
-	Wir definieren
-	\[
-		\tau_{ij}:=
-		m_{ji}\epsilon_{i} - 
-		m_{ij} \epsilon_{j} - 
-		\sum_{u} {f_{u}}^{\left( ij \right) } 
-		\epsilon_{u} 
-	\],
-	f\"ur
-	\( i < j \),
-	sodass 
-	\( \ini \left( g_{i}  \right) \)
-	und
-	\( \ini \left( g_{j}  \right) \)
-	dasselbe Basiselement von \( F \)
-	enthalten.
-\end{defn}
-\begin{thm}[Schreyer \cite{Eis1}[15.10]
-	Mit der Notation von \ref{taunotation}, 
-	konnen wir annehmen,
-	dass
-	\( g_1,\dots,g_t\)
-	eine Gr\"obnerbasis sind.
-	Sei jetzt 
-	\( > \) 
-	eine Monomordnung auf 
-	\( \oplus_{j=1}^t S \epsilon_{j} \),
-	f\"ur die gilt
-	\( m \epsilon_{u} > n \epsilon_{v} \)
-	\(\iff\)
-	\[
-		\ini\left(  m g_{u} \right) > \ini\left( n g_{v} \right) 
-		\text{bez\"uglich der Ordnung auf } F 
-	\]
-	oder
-	\[
-		\ini\left( m g_{u} \right) = \ini\left( n g_{v} \right) 
-		\left( \text{bis auf Vielfachheit} \right) \text{but} u < v.
-	\].
-	Die
-	\( \tau_{ij} \) 
-	erzeugen die Syuygien auf den
-	\( g_{i} \).
-	Insbesondere sind die
-	\( \tau_{ij} \)
-	eine Gr\"obnerbasis der Syzygien bez\"uglich der Ordnung
-	\( > \)
-	und 
-	\( \ini\left( \tau_{ij} \right) = m_{ji}\epsilon_{i}.\)
-	\begin{proof}
-		Wir beginnen damit zu zeigen, dass
-		\( \ini \left( \tau_{ij} \right) 
-		=
-		m_{ji} \epsilon_{i} \).
-		Es gilt 
-		\[
-			m_{ji} \ini \left( g_{i} \right) 
-			= m_{ij} \ini \left( g_{j} \right),
-		\]
-		und diese Terme sind nach Annahme gr\"osser als alle,
-		die in den 
-		\( f_{u}^{\left( ij \right)} g_{u} \)
-		vorkommen.
-		Deshalb ist
-		\( \ini\left( \tau_{ij} \right) \)
-		entweder
-		\( (a) \ m_{ji} \epsilon_{i} \)
-		oder
-		\( (b) \ -m_{ij}\epsilon_{j} \)
-		aufgrund des ersten Teils der Definition der Monomordnung
-		\( > \),
-		und da
-		\( i < j \)
-		gilt
-		\( m_{ji} \epsilon_{i} 
-		> m_{ij}\epsilon_{j} \)
-		und somit sind wir im Fall 
-		\( (a) \).
-		Jetzt ist noch zu zeigen,
-		dass die 
-		\( \tau_{ij} \)
-		eine Gr\"obnerbasis bilden. \\
-		Sei 
-		\( \tau = \sum f_{v} \epsilon_{v}\)
-		eine beliebige Syzygie.
-		Wir m\"ussen nun zeigen,
-		dass 
-		\( \ini\left( \tau \right) \)
-		durch eine der 
-		\( \ini\left( \tau_{ij} \right)\)
-		teilbar ist,
-		also
-		\( \ini\left( \tau \right) \)
-		ein Vielfaches von einem
-		\( m_{ji} \epsilon_{i} \)
-		mit
-		\( i<j \).\\
-		F\"ur jeden Index
-		\(v \),
-		sei
-		\(n_{v} \epsilon_{v}
-		=\ini\left( f_{v}\epsilon_{v} \right) \).
-		Da diese Terme sich gegenseitig nicht k\"urzen,
-		gilt
-		\( \ini\left( \sum f_{v}\epsilon_{v} \right)=
-		n_{i}\epsilon_{i}\)
-		f\"ur ein 
-		\( i\).
-		Sei
-		\( \sigma=\sum'n_{v} \epsilon_{v} \)
-		die Summe \"uber alle Indices
-		\( v \)
-		f\"ur die gilt
-		\( n_v \ini \left( g_{v} \right)
-		=n_{i} \ini\left( g_{i} \right) \)
-		bis auf Skalarmultiplikation.
-		Alle Indices
-		\( v \)
-		in dieser Summer sind 
-		\( \ge i \),
-		da wir angenommen haben,
-		dass 
-		\( n_{i} \epsilon_{i} \)
-		der initiale Term von 
-		\( \tau \)
-		ist. \\
-		Deshalb ist 
-		\( \sigma \)
-		eine Syzygie auf den
-		\( \in\left( g_{v} \right) \)
-		mit 
-		\( v \ge i\).
-		Aus  \ref{syzygygen} 
-		folgt, 
-		dass alle solche Syzygien von den
-		\( \sigma_{uv} \)
-		f\"ur 
-		\( u,v \ge i \),
-		und die 
-		\( \sigma_{uv} \) ,
-		in denen 
-		\( \epsilon_{i} \) 
-		vorkommen,
-		sind die
-		\( \sigma_{ij}\)
-		mit
-		\( j > i \).
-		Daraus folgt, 
-		dass die Koeffizienten 
-		\(n_{i}\)
-		in dem von den 
-		\(m_{ji}\) 
-		erzeugten Ideal liegt,
-		f\"ur 
-		\( j> i \)
-		und damit folgt die Behauptung.
-	\end{proof}
-\end{thm}
 \section{Syzygientricks}
 
-\begin{nota}[\cite{Eis1}{322}\label{syzygygenerationnotation}]
-	Sei 
-	\( F \) 
-	ein freies Modul mit Basis 
-	und
-	\( M \)
-	Untermodul von 
-	\( F \)
-	der von 
-	\( m_{1} , \dots , m_{t} \)
-	erzeugt wird.
-	Sei
-	\begin{align*}
-		\phi:	& \oplus_{j=1}^{t} S\epsilon_{j} &\to   F \\
-			& \phi\left( \epsilon_{j} \right) &=  m_{j}
-	\end{align*}
-	die Abbildung eines freien Moduls, dessen Bild
-	\( M \)
-	ist.
-	F\"ur alle Indexpaare 	
-	\( i,j \),
-	sodass 
-	\( m_{i}\)
-	und 
-	\( m_{j}\)
-	dasselbe Basiselement von 
-	\( F \),
-	definieren wir 
-	\[
-		m_{ij} := m_{i}/\GCD\left( m_{i},m_{j} \right) ,
-	\]
-	wobei wir die 
-	\( \sigma_{ij}\)
-	wie folgt als Elemente von 
-	\( \ker \phi \)
-	definieren:
-	\[
-		\sigma_{ij} := m_{ji}\epsilon_{i}-m_{ij}\epsilon_{j} .
-	\]
-
-\end{nota}
-
-\begin{lem}[\cite{Eis1}{15.1}\label{syzygygen}]
-	Mit der Notation  \ref{syzygygenerationnotation} gilt,
-	dass 
-	\( \ker \phi \)
-	von den
-	\( \sigma_{ij} \)
-	erzeugt wird.
-	\begin{proof}
-		\label{uniquesum}
-		\( \ker \phi\)
-		ist ein 
-		\( k \)-Vektorraum ,
-		also k\"onnen wir annehmen, dass 
-		\( \ker \phi = \underset{n \in F }{\oplus}\left( \ker \phi \right)_{n}  \),
-		wobei
-		\[ 
-			\left( \ker \phi \right)_{n} 
-			= \left\{ 
-				\sum a_{v} n_{v} \epsilon_{v} \in \ker \phi 
-				\big| m_{v} \ \text{teilt} \  n, 
-				\ n_{v} = n \slash m_{v} 
-				\ \text{and} \ a_{v} \in k  
-			\right\}
-		\]
-		geschrieben wird.
-		Angenommen
-		\[
-			\sigma = \sum p_{i} \epsilon_{i} \in S^{t}, \qquad p_{i} \in S
-		\]
-		ist eine Syzygie,
-		sodass
-		\( \sum P_{i}m_{i} =0 \).
-		F\"ur jedes Monom 
-		\( n \)
-		aus 
-		\(F\),
-		das in einem der 
-		\( p_{j}m_{j} \)
-		vorkommt,
-		und f\"ur alle 
-		\(i\) 
-		sei 
-		\( p_{i,n}\)
-		der Term von
-		\( p_{i} \),
-		sodass 
-		\( p_{i,n}m_{i} \)
-		ein Vielfaches von 
-		\( n\)
+	\begin{nota}[\cite{Eis1}{322}\label{syzygygenerationnotation}]
+		Sei 
+		\( F \) 
+		ein freies Modul mit Basis 
+		und
+		\( M \)
+		Untermodul von 
+		\( F \)
+		der von 
+		\( m_{1} , \dots , m_{t} \)
+		erzeugt wird.
+		Sei
+		\begin{align*}
+			\phi:	& \oplus_{j=1}^{t} S\epsilon_{j} &\to   F \\
+				& \phi\left( \epsilon_{j} \right) &=  m_{j}
+		\end{align*}
+		die Abbildung eines freien Moduls, dessen Bild
+		\( M \)
 		ist.
-		Es muss gelten
-		\( \sum p_{i,n} m_{i}=0 \),
-		damit 
-		\( \sum p_{i,n} \epsilon_{i} \)
-		aus 
-		\( \left( \ker \phi \right)_{n}\).
-		Nehmen wir an, dass 
-		\( \sigma= \sum a_{v} n_{v}^{\epsilon} 
-		\left( \ker \phi \right)_{n} \).
-		Wenn 
-		\( \sigma \neq 0 \).
-		dann sind mindestens zwei der 
-		\( a_{v} n_{v} \neq 0 \),
-		da 
-		\( \sigma \) eine Syzygie ist.
-		OBdA die 
-		\(i\)-te 
-		und die
-		\(j\)-te
-		, wobei 
-		\( i<j \).
-		Es folgt 
-		\( n \) 
-		wird von
-		\( m_{i} \)
+		F\"ur alle Indexpaare 	
+		\( i,j \),
+		sodass 
+		\( m_{i}\)
 		und 
-		\( m_{j} \) 
-		geteilt.
-		und somit ist 
-		\( n_{i} \)
-		teilbar durch
+		\( m_{j}\)
+		dasselbe Basiselement von 
+		\( F \),
+		definieren wir 
 		\[
-			\LCM\left( m_{i},m_{j} \right)/m_{i} 
-			= m_{j} / \GCD\left( m_{i},m_{j} \right) 
-			= m_{ji} 
+			m_{ij} := m_{i}/\GCD\left( m_{i},m_{j} \right) ,
 		\]
-		Somit k\"onnen wir ein Vielfaches von 
-		\( \left( n_{i}/m_{ji} \right)\sigma_{ij} \)
-		von 
-		\( \sigma \) 
-		abziehen um unsere Relation zu reduzieren.
-	\end{proof}
-\end{lem}
-\begin{lem}[\cite{Eis1}{323}]
-	Mit der Notation aus \ref{syzygygen} erhalten wir,
-	dass jedes Element von 
-	\( \ker \phi \)
-	eindeutig als ein Summe von Elementen 
-	\( \tau = \sum n_{ij} \sigma_{ij} \in \ker \phi\)
-	schreiben k\"onnen, 
-	sodass 
-	\( n_{v} m_{v} \)
-	zum gleichen Monom 
-	\( n\in F \)
-	\"aquivalent sind.
-	Solche Elemente k\"onnen wir als
-	\[ 
-		\tau = \sum n_{ij} \sigma_{ij} ,
-	\]
-	wobei \"uber alle 
-	\( i<j \), 
-	sodass 
-	\( \LCM \left( m_{i},m_{j} \right)  | n \)
-	und
-	\( n_{ij} \)
-	ein Vielfaches von 
-	\( n/ \LCM\left( m_{i},m_{j} \right)
-	=n_{i} / m_{ji}\)
-	ist,
-	summieren.
-	\begin{proof}
-		Die Eindeutigkeit folgt aus \ref{uniquesum}.
-		Da wir im letzten Schritt des obigen Beweises nur Terme entfernen,
-		k\"onnen wir die 
-		\(\sigma_{ij} \) 
-		von dort nehmen.
-	\end{proof}
-\end{lem}
-Diese 
-\( \sigma_{ij}\)
-nennt man oft 
-\textbf{geteilte Koszul Relationen}.
+		wobei wir die 
+		\( \sigma_{ij}\)
+		wie folgt als Elemente von 
+		\( \ker \phi \)
+		definieren:
+		\[
+			\sigma_{ij} := m_{ji}\epsilon_{i}-m_{ij}\epsilon_{j} .
+		\]
 
+	\end{nota}
+
+	\begin{lem}[\cite{Eis1}{15.1}\label{syzygygen}]
+		Mit der Notation  \ref{syzygygenerationnotation} gilt,
+		dass 
+		\( \ker \phi \)
+		von den
+		\( \sigma_{ij} \)
+		erzeugt wird.
+		\begin{proof}
+			\label{uniquesum}
+			\( \ker \phi\)
+			ist ein 
+			\( k \)-Vektorraum ,
+			also k\"onnen wir annehmen, dass 
+			\( \ker \phi = \underset{n \in F }{\oplus}\left( \ker \phi \right)_{n}  \),
+			wobei
+			\[ 
+				\left( \ker \phi \right)_{n} 
+				= \left\{ 
+					\sum a_{v} n_{v} \epsilon_{v} \in \ker \phi 
+					\big| m_{v} \ \text{teilt} \  n, 
+					\ n_{v} = n \slash m_{v} 
+					\ \text{and} \ a_{v} \in k  
+				\right\}
+			\]
+			geschrieben wird.
+			Angenommen
+			\[
+				\sigma = \sum p_{i} \epsilon_{i} \in S^{t}, \qquad p_{i} \in S
+			\]
+			ist eine Syzygie,
+			sodass
+			\( \sum P_{i}m_{i} =0 \).
+			F\"ur jedes Monom 
+			\( n \)
+			aus 
+			\(F\),
+			das in einem der 
+			\( p_{j}m_{j} \)
+			vorkommt,
+			und f\"ur alle 
+			\(i\) 
+			sei 
+			\( p_{i,n}\)
+			der Term von
+			\( p_{i} \),
+			sodass 
+			\( p_{i,n}m_{i} \)
+			ein Vielfaches von 
+			\( n\)
+			ist.
+			Es muss gelten
+			\( \sum p_{i,n} m_{i}=0 \),
+			damit 
+			\( \sum p_{i,n} \epsilon_{i} \)
+			aus 
+			\( \left( \ker \phi \right)_{n}\).
+			Nehmen wir an, dass 
+			\( \sigma= \sum a_{v} n_{v}^{\epsilon} 
+			\left( \ker \phi \right)_{n} \).
+			Wenn 
+			\( \sigma \neq 0 \).
+			dann sind mindestens zwei der 
+			\( a_{v} n_{v} \neq 0 \),
+			da 
+			\( \sigma \) eine Syzygie ist.
+			OBdA die 
+			\(i\)-te 
+			und die
+			\(j\)-te
+			, wobei 
+			\( i<j \).
+			Es folgt 
+			\( n \) 
+			wird von
+			\( m_{i} \)
+			und 
+			\( m_{j} \) 
+			geteilt.
+			und somit ist 
+			\( n_{i} \)
+			teilbar durch
+			\[
+				\LCM\left( m_{i},m_{j} \right)/m_{i} 
+				= m_{j} / \GCD\left( m_{i},m_{j} \right) 
+				= m_{ji} 
+			\]
+			Somit k\"onnen wir ein Vielfaches von 
+			\( \left( n_{i}/m_{ji} \right)\sigma_{ij} \)
+			von 
+			\( \sigma \) 
+			abziehen um unsere Relation zu reduzieren.
+		\end{proof}
+	\end{lem}
+	\begin{lem}[\cite{Eis1}{323}]
+		Mit der Notation aus \ref{syzygygen} erhalten wir,
+		dass jedes Element von 
+		\( \ker \phi \)
+		eindeutig als ein Summe von Elementen 
+		\( \tau = \sum n_{ij} \sigma_{ij} \in \ker \phi\)
+		schreiben k\"onnen, 
+		sodass 
+		\( n_{v} m_{v} \)
+		zum gleichen Monom 
+		\( n\in F \)
+		\"aquivalent sind.
+		Solche Elemente k\"onnen wir als
+		\[ 
+			\tau = \sum n_{ij} \sigma_{ij} ,
+		\]
+		wobei \"uber alle 
+		\( i<j \), 
+		sodass 
+		\( \LCM \left( m_{i},m_{j} \right)  | n \)
+		und
+		\( n_{ij} \)
+		ein Vielfaches von 
+		\( n/ \LCM\left( m_{i},m_{j} \right)
+		=n_{i} / m_{ji}\)
+		ist,
+		summieren.
+		\begin{proof}
+			Die Eindeutigkeit folgt aus \ref{uniquesum}.
+			Da wir im letzten Schritt des obigen Beweises nur Terme entfernen,
+			k\"onnen wir die 
+			\(\sigma_{ij} \) 
+			von dort nehmen.
+		\end{proof}
+	\end{lem}
+	Diese 
+	\( \sigma_{ij}\)
+	nennt man oft 
+	\textbf{geteilte Koszul Relationen}.
+
+
+\section{Gr\"obner Basen}
+	\begin{defn}[Initialer Term \cite{Eis1}{325}]
+		Wenn 
+		\( > \)
+		eine Ordnung auf Monomen ist,
+		dann definieren wir f\"ur alle 
+		\( f \in F \)
+		den \textbf{initialen Term von \( f\) },
+		geschrieben als 
+		\( \ini_{>} \left( f \right) \),
+		als den gr\"ossten Term von 
+		\( f \) 
+		bez\"uglich der Ordnung
+		\( > \).
+		Wenn 
+		\( M \) 
+		ein Untermodul von 
+		\( F \) 
+		ist,
+		dann bezeichnet 
+		\( \ini_{>} \left( M \right) \)
+		den Untermodul, 
+		der von 
+		\( \left\{ \ini_{>} \left( f \right) \big| f \in F \right\}\)
+		erzeugt wird.
+		Wir werden oft 
+		\( \ini_{>} \)
+		mit 
+		\( \ini \)
+		abk\"urzen,
+		wenn die Ordnung klar ist.
+	\end{defn}
+	\begin{bsp}
+		Sei 
+		\( >_{lex} \) 
+		Die Ordung in der gilt
+		\( x > y \),
+		dann ist 
+		\( \ini_{>_{lex}} \left( x^{2}+xy +y^{2} \right)=x^{2} \)
+
+	\end{bsp}
+	\begin{defn}[Gr\"obnerbasis \cite{Eis1}{328}]
+		Eine \textbf{Gr\"obnerbasis} bez\"uglich einer Ordnung 
+		\( > \)
+		auf einem freien Modul mit Basis
+		\(F \)
+		ist eine Menge von Elementen
+		\( g_{1},\dots,g_{t} \in F,\)
+		sodass wenn 
+		\( M \) 
+		ein Untermodul von 
+		\( F \) 
+		erzeugt von
+		\( g_{1}, \dots , g_{t} \)
+		ist,
+		gilt, dass die
+		\( \ini_{>}  \left(  g_{1} \right),
+		\dots,
+		\ini_{>} \left( g_{t} \right) \)
+		\( \ini_{>} \left( M \right) \)
+		erzeugen. \\
+		Wir sagen dann,
+		dass
+		\( g_{1},\dots,g_{t} \)
+		eine
+		\textbf{Gr\"obnerbasis von \( M \)}
+		sind.
+
+
+	\end{defn}
+	\begin{propdef}[\cite{Eis1}{15.6}]
+		Sei
+		\( F \) 
+		ein freier 
+		\( S \)-Modul
+		mit einer Basis und {Monomordnung 
+		\(>\).} 
+		Wenn 
+		\( f,g_1,\dots,g_t \in F \) 
+		dann gibt es einen Ausdruck 
+		\[
+			f= \sum f_i g_i +f' \text{mit} f' \in F, f_i \in S_i ,
+		\]
+		bei dem kein 
+		\( f' \)
+		in
+		\( \left( \ini\left(g_1\right),\dots,\ini\left(g_t\right) \right) \) 
+		vorkommt und 
+		\[
+			\ini\left( f \right) \ge \ini\left( f_i g_i  \right)
+		\]
+		f\"ur alle 
+		\( i \).
+		Jedes solches 
+		\( f' \)
+		heisst \textbf{Rest} von 
+		\( f \) 
+		in Bezug auf 
+		\( g_{1},\dots,g_{t} \)
+		und ein Ausdruck 
+		\( f=\sum f_{i} g_{i} + f' \),
+		der die Bedingungen von oben erf\"ullt,
+		heisst
+		\textbf{Standard Ausdruck} f\"ur 
+		\(f\) 
+		ausgedr\"uckt in
+		\( g_{i} \).
+	\end{propdef}
+	\begin{algo}[Divisionsalgorithmus \cite{Eis1}{15.7}]
+		Sei 
+		\( F \)
+		ein freier 
+		\( S\)-Modul
+		mit Basis und fester Monomordnung.
+		Wenn
+		\( f,g_1,\dots,g_t \in F \),
+		dann k\"onnen wir einen Standard Ausdruck
+		\[
+		        f=\sum m_u g_{s_u} +f'
+		\]
+		von
+		\( f \)
+		bez\"uglich 
+		\( g_1,\dots,g_t \)
+		finden,
+		indem wir die Indices
+		\( s_{u} \)
+		und die Terme
+		\(m_{u} \)
+		induktiv definieren.
+		Wenn wir bereits 
+		\( s_1,\dots,s_p \)
+		und
+		\( m_1,\dots,m_p\),
+		gew\"ahlt haben,
+		dann w\"ahlen wir, 
+		falls 
+		\[
+			f'_p:=f-\sum_{u=1}^{p} m_u g_{s_u} \neq 0
+		\]
+		und
+		\( m \) 
+		der maximale Term von 
+		\(f'_p \),
+		der durch eines der der
+		\( in\left( g_i \right) \)
+		teilbar ist,
+		\[
+			s_{p+1}=i , \\
+			m_{p+1}=m / in\left( g_i \right)
+		\].
+		Dieser Vorgang bricht entweder ab, wenn 
+		\( f'_p=0 \) \
+		oder wenn keines der
+		\( in\left( g_i \right) \) 
+		ein Monom aus 
+		\( f'_p\)
+		teilt;
+		der Rest 
+		\(f'\) 
+		ist dann 
+		\( f'_p \).
+	\end{algo}
+
+	\begin{nota}[\cite{Eis1}{331}\label{criterionnotation}]
+		Sei 
+		\( F \) 
+		ein freier Modul \"uber
+		\(S\)
+		mit Basis und Monomordnung
+		\( > \).
+		Seien
+		\( 0 \neq g_{1},\dots,g_{t} \in F\)
+		und 
+		\( \oplus S \epsilon_{i} \)
+		ein freier Modul mit Basis 
+		\( \left\{ \epsilon_{i} \right\} \)
+		die den 
+		\( \left\{ g_{i} \right\}\)
+		aus 
+		\( F \)
+		\"uber die folgenden Abbildungen 
+		\begin{align*}
+			\phi:& \oplus S \epsilon_{i} & F \\
+			& \epsilon_{i} & \mapsto g_{i} 
+		\end{align*}
+		entsprechen. \\
+		F\"ur jedes Indexpaar 
+		\( i, j \),
+		sodass 
+		\( \ini \left( g_{i} \right) \)
+		und
+		\( \ini \left( g_{j} \right) \)
+		dasselbe Basiselement von
+		\( F \)
+		enthalten,
+		definieren wir
+		\[
+			m_{ij} 
+			= \ini \left( g_{i} \right) 
+			/ \GCD \left( \ini\left( g_{i} \right), 
+			\ini \left( g_{j} \right) \right) \in S
+		\]
+		und setzen
+		\[
+			\sigma_{ij} 
+			= m_{ji} \epsilon_{i} 
+			- m_{ij} \epsilon_{j}
+		\].
+		Diese 
+		\( \sigma_{ij} \)
+		Erzeugen die Syzygie auf den 
+		\( \ini \left( g_{i} \right) \)
+		nach \ref{syzygygen}.
+		Desweiteren w\"ahlen wir f\"ur jedes der Indexpaare einen Standardausdruck 
+		\[ 
+			m_{ji} g_{i} -m_{ij} g_{j} = \sum f_{u}^{\left( ij \right) } g_{u} + h_{ij}
+		\]
+		f\"ur 
+		\(  m_{ji} g_{i} -m_{ij} g_{j} \)
+		bez\"uglich der
+		\( g_{1},\dots , g_{t} \).
+		Man kann sehen, 
+		dass 
+		\( \ini \left( f_{u}^{ij} g_{u} \right) < \ini \left( m_{ji}g_{i} \right) \)
+		Zur Vereinfachung setzen wir
+		\( h_{ij} = 0 \),
+		falls 
+		\( \ini\left( g_{i} \right) \)
+		und 
+		\( \ini\left( g_{j} \right) \)
+		verschiedene Basiselemente von 
+		\( F \)
+		enthalten.
+	\end{nota}
+	\begin{thm}[Buchberger Kriterium \cite{Eis1}{15.8}\label{criterion}]
+		Mit der Notation aus \ref{criterionnotation} folgt,
+		dass die 
+		\( g_{1},\dots,g_{t} \)
+		eine Gr\"obnerbasis bilden,
+		genau dann wenn 
+		\( h_{ij} \)
+		f\"ur alle 
+		\( i \)
+		und 
+		\( j\).
+		\begin{proof}
+			{\color{red} REPLACE ME }
+		\end{proof}
+	\end{thm}
+
+	\begin{algo}[Buchberger Algorithmus \cite{Eis1}{333}]
+		Unter den Vorraussetzungen aus \ref{criterion} 
+		sei
+		\( M \),
+		das ein Untermodul von
+		\( F \)
+		und 
+		\( g_{1},\dots,g_{t}\)
+		seien  Erzeuger von 
+		\( M \).
+		Berechne die Reste
+		\( h_{ij} \).
+		Wenn alle 
+		\( h_{ij} = 0 \),
+		dann bilden die 
+		\(g_{i} \)
+		eine Gr\"obnerbasis von 
+		\( M \).
+		Wenn einige der 
+		\( h_{ij} \neq 0 \)
+		dann ersetze 
+		\( g_{1},\dots,g_{t}\)
+		mit 
+		\( g_{1},\dots,g_{t},h_{ij} \)
+		und wiederholen dann den Prozess.
+		Da der von
+		\( g_{1},\dots,g_{t},h_{ij} \)
+		erzeugte Untermodul echt gr\"osser als der von
+		\( g_{1},\dots,g_{t}\)
+		erzeugte Untermodul ist, 
+		und damit terminiert der Prozess nach endlich vielen Schritten.
+		Die obere Schranke 
+		\[
+			b=\left( 
+				\left( r+1 \right)
+				\left( d+1 \right)+1 
+			\right)^{2^{(s+1)}(r+1) }
+		\]	
+		h\"alt f\"ur
+		\begin{align*}	
+			r = &\text{number of variables} \\
+			d = &\text{maximum degree of the polynomials \( g_i\) , and } \\
+			s = &\text{the degree of the Hilbert polynomial } \\
+			    &\text{( this is one less than the dimension; it is between \( 0 \) and \(r-1\) ).}
+		\end{align*}
+
+	\end{algo}
+	\begin{defn}[\cite{Eis1}{334}\label{taunotation}]
+		Wir definieren
+		\[
+			\tau_{ij}:=
+			m_{ji}\epsilon_{i} - 
+			m_{ij} \epsilon_{j} - 
+			\sum_{u} {f_{u}}^{\left( ij \right) } 
+			\epsilon_{u} 
+		\],
+		f\"ur
+		\( i < j \),
+		sodass 
+		\( \ini \left( g_{i}  \right) \)
+		und
+		\( \ini \left( g_{j}  \right) \)
+		dasselbe Basiselement von \( F \)
+		enthalten.
+	\end{defn}
+	\begin{thm}[Schreyer \cite{Eis1}[15.10]
+		Mit der Notation von \ref{taunotation}, 
+		konnen wir annehmen,
+		dass
+		\( g_1,\dots,g_t\)
+		eine Gr\"obnerbasis sind.
+		Sei jetzt 
+		\( > \) 
+		eine Monomordnung auf 
+		\( \oplus_{j=1}^t S \epsilon_{j} \),
+		f\"ur die gilt
+		\( m \epsilon_{u} > n \epsilon_{v} \)
+		\(\iff\)
+		\[
+			\ini\left(  m g_{u} \right) > \ini\left( n g_{v} \right) 
+			\text{bez\"uglich der Ordnung auf } F 
+		\]
+		oder
+		\[
+			\ini\left( m g_{u} \right) = \ini\left( n g_{v} \right) 
+			\left( \text{bis auf Vielfachheit} \right) \text{but} u < v.
+		\].
+		Die
+		\( \tau_{ij} \) 
+		erzeugen die Syuygien auf den
+		\( g_{i} \).
+		Insbesondere sind die
+		\( \tau_{ij} \)
+		eine Gr\"obnerbasis der Syzygien bez\"uglich der Ordnung
+		\( > \)
+		und 
+		\( \ini\left( \tau_{ij} \right) = m_{ji}\epsilon_{i}.\)
+		\begin{proof}
+			Wir beginnen damit zu zeigen, dass
+			\( \ini \left( \tau_{ij} \right) 
+			=
+			m_{ji} \epsilon_{i} \).
+			Es gilt 
+			\[
+				m_{ji} \ini \left( g_{i} \right) 
+				= m_{ij} \ini \left( g_{j} \right),
+			\]
+			und diese Terme sind nach Annahme gr\"osser als alle,
+			die in den 
+			\( f_{u}^{\left( ij \right)} g_{u} \)
+			vorkommen.
+			Deshalb ist
+			\( \ini\left( \tau_{ij} \right) \)
+			entweder
+			\( (a) \ m_{ji} \epsilon_{i} \)
+			oder
+			\( (b) \ -m_{ij}\epsilon_{j} \)
+			aufgrund des ersten Teils der Definition der Monomordnung
+			\( > \),
+			und da
+			\( i < j \)
+			gilt
+			\( m_{ji} \epsilon_{i} 
+			> m_{ij}\epsilon_{j} \)
+			und somit sind wir im Fall 
+			\( (a) \).
+			Jetzt ist noch zu zeigen,
+			dass die 
+			\( \tau_{ij} \)
+			eine Gr\"obnerbasis bilden. \\
+			Sei 
+			\( \tau = \sum f_{v} \epsilon_{v}\)
+			eine beliebige Syzygie.
+			Wir m\"ussen nun zeigen,
+			dass 
+			\( \ini\left( \tau \right) \)
+			durch eine der 
+			\( \ini\left( \tau_{ij} \right)\)
+			teilbar ist,
+			also
+			\( \ini\left( \tau \right) \)
+			ein Vielfaches von einem
+			\( m_{ji} \epsilon_{i} \)
+			mit
+			\( i<j \).\\
+			F\"ur jeden Index
+			\(v \),
+			sei
+			\(n_{v} \epsilon_{v}
+			=\ini\left( f_{v}\epsilon_{v} \right) \).
+			Da diese Terme sich gegenseitig nicht k\"urzen,
+			gilt
+			\( \ini\left( \sum f_{v}\epsilon_{v} \right)=
+			n_{i}\epsilon_{i}\)
+			f\"ur ein 
+			\( i\).
+			Sei
+			\( \sigma=\sum'n_{v} \epsilon_{v} \)
+			die Summe \"uber alle Indices
+			\( v \)
+			f\"ur die gilt
+			\( n_v \ini \left( g_{v} \right)
+			=n_{i} \ini\left( g_{i} \right) \)
+			bis auf Skalarmultiplikation.
+			Alle Indices
+			\( v \)
+			in dieser Summer sind 
+			\( \ge i \),
+			da wir angenommen haben,
+			dass 
+			\( n_{i} \epsilon_{i} \)
+			der initiale Term von 
+			\( \tau \)
+			ist. \\
+			Deshalb ist 
+			\( \sigma \)
+			eine Syzygie auf den
+			\( \in\left( g_{v} \right) \)
+			mit 
+			\( v \ge i\).
+			Aus  \ref{syzygygen} 
+			folgt, 
+			dass alle solche Syzygien von den
+			\( \sigma_{uv} \)
+			f\"ur 
+			\( u,v \ge i \),
+			und die 
+			\( \sigma_{uv} \) ,
+			in denen 
+			\( \epsilon_{i} \) 
+			vorkommen,
+			sind die
+			\( \sigma_{ij}\)
+			mit
+			\( j > i \).
+			Daraus folgt, 
+			dass die Koeffizienten 
+			\(n_{i}\)
+			in dem von den 
+			\(m_{ji}\) 
+			erzeugten Ideal liegt,
+			f\"ur 
+			\( j> i \)
+			und damit folgt die Behauptung.
+		\end{proof}
+	\end{thm}
 
 \input{./bibtex}
 
