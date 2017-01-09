@@ -1,0 +1,181 @@
+%!TeX spellcheck = de_DE
+%!TeX encoding = utf8
+
+
+\documentclass{article}
+\input{./preamble}
+
+\begin{document}
+\maketitle
+\begin{thm}[Das Hilbert'sche Syzygien Theorem \cite{Eis1}{1.13}]
+	Wenn 
+	\( R = l \left[ x_1,\dots,x_r \right] \)
+	gilt,
+	dann hat jeder endlich erzeugte graduierte 
+	\(R \)-Modul 
+	eine endlich erzeugte freie Aufl\"osung von L\"ange 
+	\( \le r \) 
+	aus endlich erzeugten freien Moduln.
+\end{thm}
+
+\begin{algo}[Divisionsalgorithmus \cite{Eis1}{15.7}]
+	Sei 
+	\( F \)
+	ein freier 
+	\( S\)-Modul
+	mit Basis und fester Monomordnung.
+	Wenn
+	\( f,g_1,\dots,g_t \in F \),
+	dann k\"onnen wir einen Standard Ausdruck
+	\[
+	        f=\sum m_u g_{s_u} +f'
+	\]
+	von
+	\( f \)
+	bez\"uglich 
+	\( g_1,\dots,g_t \)
+	finden,
+	indem wir die Indices
+	\( s_{u} \)
+	und die Terme
+	\(m_{u} \)
+	induktiv definieren.
+	Wenn wir bereits 
+	\( s_1,\dots,s_p \)
+	und
+	\( m_1,\dots,m_p\),
+	gew\"ahlt haben,
+	dann w\"ahlen wir, 
+	falls 
+	\[
+		f'_p:=f-\sum_{u=1}^{p} m_u g_{s_u} \neq 0
+	\]
+	und
+	\( m \) 
+	der maximale Term von 
+	\(f'_p \),
+	der durch eines der der
+	\( in\left( g_i \right) \)
+	teilbar ist,
+	\[
+		s_{p+1}=i , \\
+		m_{p+1}=m / in\left( g_i \right)
+	\].
+	Dieser Vorgang bricht entweder ab, wenn 
+	\( f'_p=0 \) \
+	oder wenn keines der
+	\( in\left( g_i \right) \) 
+	ein Monom aus 
+	\( f'_p\)
+	teilt;
+	der Rest 
+	\(f'\) 
+	ist dann 
+	\( f'_p \).
+\end{algo}
+
+\begin{thm}[Buchberger Kriterium \cite{Eis1}{15.8}\label{criterion}]
+	Mit der Notation aus \ref{criterionnotation} folgt,
+	dass die 
+	\( g_{1},\dots,g_{t} \)
+	eine Gr\"obnerbasis bilden,
+	genau dann wenn 
+	\( h_{ij} \)
+	f\"ur alle 
+	\( i \)
+	und 
+	\( j\).
+	\begin{proof}
+		{\color{red} REPLACE ME }
+	\end{proof}
+\end{thm}
+
+\begin{algo}[Buchberger Algorithmus \cite{Eis1}{333}]
+	Unter den Vorraussetzungen aus \ref{criterion} 
+	sei
+	\( M \),
+	das ein Untermodul von
+	\( F \)
+	und 
+	\( g_{1},\dots,g_{t}\)
+	seien  Erzeuger von 
+	\( M \).
+	Berechne die Reste
+	\( h_{ij} \).
+	Wenn alle 
+	\( h_{ij} = 0 \),
+	dann bilden die 
+	\(g_{i} \)
+	eine Gr\"obnerbasis von 
+	\( M \).
+	Wenn einige der 
+	\( h_{ij} \neq 0 \)
+	dann ersetze 
+	\( g_{1},\dots,g_{t}\)
+	mit 
+	\( g_{1},\dots,g_{t},h_{ij} \)
+	und wiederholen dann den Prozess.
+	Da der von
+	\( g_{1},\dots,g_{t},h_{ij} \)
+	erzeugte Untermodul echt gr\"osser als der von
+	\( g_{1},\dots,g_{t}\)
+	erzeugte Untermodul ist, 
+	und damit terminiert der Prozess nach endlich vielen Schritten.
+	Die obere Schranke 
+	\[
+		b=\left( 
+			\left( r+1 \right)
+			\left( d+1 \right)+1 
+		\right)^{2^{(s+1)}(r+1) }
+	\]	
+	h\"alt f\"ur
+	\begin{align*}	
+		r = &\text{number of variables} \\
+		d = &\text{maximum degree of the polynomials \( g_i\) , and } \\
+		s = &\text{the degree of the Hilbert polynomial } \\
+		    &\text{( this is one less than the dimension; it is between \( 0 \) and \(r-1\) ).}
+	\end{align*}
+
+\end{algo}
+
+
+\begin{thm}[Schreyer \cite{Eis1}[15.10]
+	Mit der Notation von \ref{taunotation}, 
+	konnen wir annehmen,
+	dass
+	\( g_1,\dots,g_t\)
+	eine Gr\"obnerbasis sind.
+	Sei jetzt 
+	\( > \) 
+	eine Monomordnung auf 
+	\( \oplus_{j=1}^t S \epsilon_{j} \),
+	f\"ur die gilt
+	\( m \epsilon_{u} > n \epsilon_{v} \)
+	\(\iff\)
+	\[
+		\ini\left(  m g_{u} \right) > \ini\left( n g_{v} \right) 
+		\text{bez\"uglich der Ordnung auf } F 
+	\]
+	oder
+	\[
+		\ini\left( m g_{u} \right) = \ini\left( n g_{v} \right) 
+		\left( \text{bis auf Vielfachheit} \right) \text{but} u < v.
+	\].
+	Die
+	\( \tau_{ij} \) 
+	erzeugen die Syuygien auf den
+	\( g_{i} \).
+	Insbesondere sind die
+	\( \tau_{ij} \)
+	eine Gr\"obnerbasis der Syzygien bez\"uglich der Ordnung
+	\( > \)
+	und 
+	\( \ini\left( \tau_{ij} \right) = m_{ji}\epsilon_{i}.\)
+\end{thm}
+
+\input{./bibtex}
+
+\end{document}
+
+
+
