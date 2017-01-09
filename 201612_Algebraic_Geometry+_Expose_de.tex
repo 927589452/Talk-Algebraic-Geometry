@@ -333,25 +333,38 @@
 	\(m_{u} \)
 	induktiv definieren.
 	{\color{red}
-and the terms \(m_u\) inductively.
-Having chosen
-\( s_1,\dots,s_p \)
-and
-\( m_1,\dots,m_p\),
-if
-\[
-f'_p:=f-\sum_{u=1}^{p} m_u g_{s_u} \neq 0
-\]
-and \( m \) is the maximal term of \(f'_p \) that is divisible by some \( in\left( g_i \right) \),
-then we choose
-\[
-s_{p+1}=i , \\
-m_{p+1}=m / in\left( g_i \right)
-\]
-This process terminates when either
-\( f'_p=0 \)or no \( in\left( g_i \right) \) divides a monomial of
-\( f'_p\);
-the remainder \(f'\) is then the last \( f'_p \) produced.
+	Wenn wir bereits 
+	\( s_1,\dots,s_p \)
+	und
+	\( m_1,\dots,m_p\),
+	gew\"ahlt haben,
+	dann w\"ahlen wir, 
+	falls 
+	\[
+		f'_p:=f-\sum_{u=1}^{p} m_u g_{s_u} \neq 0
+	\]
+	und
+	\( m \) 
+	der maximale Term von 
+	\(f'_p \),
+	der durch eines der der
+	\( in\left( g_i \right) \)
+	teilbar ist,
+	\[
+		s_{p+1}=i , \\
+		m_{p+1}=m / in\left( g_i \right)
+	\].
+	Dieser Vorgang bricht entweder ab, wenn 
+	\( f'_p=0 \)
+	oder wenn keines der
+	\( in\left( g_i \right) \) 
+	ein Monom aus 
+	\( f'_p\)
+	teilt;
+	der Rest 
+	\(f'\) 
+	ist dann 
+	\( f'_p \).
 }
 \end{algo}
 
