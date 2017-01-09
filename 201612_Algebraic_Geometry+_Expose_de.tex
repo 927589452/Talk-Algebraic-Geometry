@@ -509,9 +509,9 @@
 	f\"ur
 	\( i < j \),
 	sodass 
-	\( in \left( g_{i}  \right) \)
+	\( \ini \left( g_{i}  \right) \)
 	und
-	\( in \left( g_{j}  \right) \)
+	\( \ini \left( g_{j}  \right) \)
 	dasselbe Basiselement von \( F \)
 	enthalten.
 \end{defn}
@@ -529,12 +529,12 @@
 	\( m \epsilon_{u} > n \epsilon_{v} \)
 	\(\iff\)
 	\[
-		\in\left(  m g_{u} \right) > \in\left( n g_{v} \right) 
+		\ini\left(  m g_{u} \right) > \ini\left( n g_{v} \right) 
 		\text{bez\"uglich der Ordnung auf } F 
 	\]
 	oder
 	\[
-		\in\left( m g_{u} \right) = \in\left( n g_{v} \right) 
+		\ini\left( m g_{u} \right) = \ini\left( n g_{v} \right) 
 		\left( \text{bis auf Vielfachheit} \right) \text{but} u < v.
 	\].
 	Die
@@ -546,34 +546,41 @@
 	eine Gr\"obnerbasis der Syzygien bez\"uglich der Ordnung
 	\( > \)
 	und 
-	\( \in\left( \tau_{ij} \right) = m_{ji}\epsilon_{i}.\)
-\end{thm}
-{\color{red}
-\begin{proof}
-We show first that the initial term of
-\( \tau_{ij} \)
-is
-\( m_{ji} \epsilon_{i} \). We have
-\[
-m_{ji} \in \left( g_{i} \right) = m_{ij} \in \left( g_{j} \right),
-\]
-and these terms are by hypothesis greater than any that appear in the
-\( f_{u}^{\left( ij \right)} g_{u} .\)
-Thus,
-\( \in\left( \tau_{ij} \right) \)
-is either
-\( m_{ji} \epsilon_{i} \)
-or
-\( -m_{ij}\epsilon_{j} \)
-by the first part of the definition of
-\( > \),
-and since
-\( i < j \)
-we have
-\( m_{ji} \epsilon_{i} > m_{ij}\epsilon_{j} .\) \\
-Now we show that the
-\( \tau_{ij} \)
-form a Gr\"obner basis.
+	\( \ini\left( \tau_{ij} \right) = m_{ji}\epsilon_{i}.\)
+{\color{blue}
+	\begin{proof}
+		Wir beginnen damit zu zeigen, dass
+		\( \ini \left( \tau_{ij} \right) 
+		=
+		m_{ji} \epsilon_{i} \).
+		Es gilt 
+		\[
+			m_{ji} \ini \left( g_{i} \right) 
+			= m_{ij} \ini \left( g_{j} \right),
+		\]
+		und diese Terme sind nach Annahme gr\"osser als alle,
+		die in den 
+		\( f_{u}^{\left( ij \right)} g_{u} \)
+		vorkommen.
+		Deshalb ist
+		\( \in\left( \tau_{ij} \right) \)
+		entweder
+		\( (a) \ m_{ji} \epsilon_{i} \)
+		oder
+		\( (b) \ -m_{ij}\epsilon_{j} \)
+		aufgrund des ersten Teils der Definition der Monomordnung
+		\( > \),
+		und da
+		\( i < j \)
+		gilt
+		\( m_{ji} \epsilon_{i} 
+		> m_{ij}\epsilon_{j} \)
+		und somit sind wir im Fall 
+		\( (b ) \).
+		Jetzt ist noch zu zeigen,
+		dass die 
+		\( \tau_{ij} \)
+		eine Gr\"obnerbasis bilden. \\
 Let
 \( \tau = \sum f_{v} \epsilon_{v}\)
 be any syzygy.
@@ -637,6 +644,7 @@ for
 and we are done.
 \end{proof}
 }
+\end{thm}
 \section{Syzygientricks}
 
 \begin{nota}[\cite{Eis1}{322}\label{syzygygenerationnotation}]
