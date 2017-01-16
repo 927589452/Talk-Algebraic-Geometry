@@ -9,7 +9,7 @@
 \maketitle
 \begin{thm}[Das Hilbert'sche Syzygien Theorem \cite{Eis1}{1.13}]
 	Wenn 
-	\( R = l \left[ x_1,\dots,x_r \right] \)
+	\( R = k \left[ x_1,\dots,x_r \right] \)
 	gilt,
 	dann hat jeder endlich erzeugte graduierte 
 	\(R \)-Modul 
@@ -43,28 +43,29 @@
 	Wenn wir bereits 
 	\( s_1,\dots,s_p \)
 	und
-	\( m_1,\dots,m_p\),
+	\( m_1,\dots,m_p\) \ ,
 	gew\"ahlt haben,
 	dann w\"ahlen wir, 
-	falls 
 	\[
-		f'_p:=f-\sum_{u=1}^{p} m_u g_{s_u} \neq 0
+		f'_p:=f-\sum_{u=1}^{p} m_u g_{s_u} ,
 	\]
+	falls 
+	\( f'_{p} \neq 0 \)
 	und
 	\( m \) 
 	der maximale Term von 
 	\(f'_p \),
 	der durch eines der der
-	\( in\left( g_i \right) \)
+	\( \ini\left( g_i \right) \)
 	teilbar ist,
 	\[
 		s_{p+1}=i , \\
-		m_{p+1}=m / in\left( g_i \right)
+		m_{p+1}=m / \ini\left( g_i \right)
 	\].
 	Dieser Vorgang bricht entweder ab, wenn 
 	\( f'_p=0 \) \
 	oder wenn keines der
-	\( in\left( g_i \right) \) 
+	\( \ini\left( g_i \right) \) 
 	ein Monom aus 
 	\( f'_p\)
 	teilt;
@@ -92,7 +93,7 @@
 	\( F \)
 	\"uber die folgenden Abbildungen
 	\begin{align*}
-	\phi:& \oplus S \epsilon_{i} & F \\
+	\phi:& \oplus S \epsilon_{i} & \to F \\
 	& \epsilon_{i} & \mapsto g_{i} 
 	\end{align*}
 	entsprechen. \\
@@ -114,10 +115,10 @@
 	\]
 	und setzen
 	\[
-	\sigma_{ij} 
-	= m_{ji} \epsilon_{i} 
-	- m_{ij} \epsilon_{j}
-	\].
+		\sigma_{ij} 
+		= m_{ji} \epsilon_{i} 
+		- m_{ij} \epsilon_{j} .
+	\]
 	Diese
 	\( \sigma_{ij} \)
 	Erzeugen die Syzygie auf den
@@ -133,7 +134,7 @@
 	\( g_{1},\dots , g_{t} \).
 	Man kann sehen,
 	dass
-	\( \ini \left( f_{u}^{ij} g_{u} \right) < \ini \left( m_{ji}g_{i} \right) \)
+	\( \ini \left( f_{u}^{ij} g_{u} \right) < \ini \left( m_{ji}g_{i} \right). \) \\
 	Zur Vereinfachung setzen wir
 	\( h_{ij} = 0 \),
 	falls
@@ -142,7 +143,7 @@
 	\( \ini\left( g_{j} \right) \)
 	verschiedene Basiselemente von
 	\( F \)
-	enthalten.
+	enthalten sind.
 \end{nota}
 \begin{thm}[Buchberger Kriterium \cite{Eis1}{15.8}\label{criterion}]
 	Mit der Notation aus \ref{criterionnotation} folgt,
@@ -160,8 +161,8 @@
 \begin{algo}[Buchberger Algorithmus \cite{Eis1}{333}]
 	Unter den Vorraussetzungen aus \ref{criterion} 
 	sei
-	\( M \),
-	das ein Untermodul von
+	\( M \)
+	ein Untermodul von
 	\( F \)
 	und 
 	\( g_{1},\dots,g_{t}\)
@@ -181,13 +182,13 @@
 	\( g_{1},\dots,g_{t}\)
 	mit 
 	\( g_{1},\dots,g_{t},h_{ij} \)
-	und wiederholen dann den Prozess.
+	und wiederhole dann den Prozess.
 	Da der von
 	\( g_{1},\dots,g_{t},h_{ij} \)
 	erzeugte Untermodul echt gr\"osser als der von
 	\( g_{1},\dots,g_{t}\)
 	erzeugte Untermodul ist, 
-	und damit terminiert der Prozess nach endlich vielen Schritten.
+	terminiert der Prozess nach endlich vielen Schritten.
 	Die obere Schranke 
 	\[
 		b=\left( 
@@ -197,10 +198,11 @@
 	\]	
 	h\"alt f\"ur
 	\begin{align*}	
-		r = &\text{number of variables} \\
-		d = &\text{maximum degree of the polynomials \( g_i\) , and } \\
-		s = &\text{the degree of the Hilbert polynomial } \\
-		    &\text{( this is one less than the dimension; it is between \( 0 \) and \(r-1\) ).}
+		r = &\text{Anzahl der Variablen} \\
+		d = &\text{maximal Grad von \( g_i\) , und } \\
+		s = &\text{dem Grad des Hilbertpolynoms } \\
+		    &\text{( dieser ist um eins kleiner als die Dimension; 
+		    er liegt zwischen \( 0 \) und \(r-1\) ).}
 	\end{align*}
 
 \end{algo}
@@ -211,8 +213,8 @@
                         m_{ji}\epsilon_{i} - 
                         m_{ij} \epsilon_{j} - 
                         \sum_{u} {f_{u}}^{\left( ij \right) } 
-                        \epsilon_{u} 
-                \],
+                        \epsilon_{u}, 
+                \]
                 f\"ur
                 \( i < j \),
                 sodass
@@ -226,7 +228,7 @@
 
 \begin{thm}[Schreyer \cite{Eis1}[15.10]
 	Mit der Notation von \ref{taunotation}, 
-	konnen wir annehmen,
+	k\"onnen wir annehmen,
 	dass
 	\( g_1,\dots,g_t\)
 	eine Gr\"obnerbasis sind.
@@ -235,7 +237,7 @@
 	eine Monomordnung auf 
 	\( \oplus_{j=1}^t S \epsilon_{j} \),
 	f\"ur die gilt
-	\( m \epsilon_{u} > n \epsilon_{v} \)
+	\( m \epsilon_{u} > n \epsilon_{v} \) \\
 	\(\iff\)
 	\[
 		\ini\left(  m g_{u} \right) > \ini\left( n g_{v} \right) 
@@ -244,17 +246,17 @@
 	oder
 	\[
 		\ini\left( m g_{u} \right) = \ini\left( n g_{v} \right) 
-		\left( \text{bis auf Vielfachheit} \right) \text{but} u < v.
-	\].
+		\left( \text{bis auf Vielfachheit} \right) \text{\ aber \ } u < v.
+	.\]
 	Die
 	\( \tau_{ij} \) 
-	erzeugen die Syuygien auf den
+	erzeugen die Syzygien auf den
 	\( g_{i} \).
 	Insbesondere sind die
 	\( \tau_{ij} \)
 	eine Gr\"obnerbasis der Syzygien bez\"uglich der Ordnung
 	\( > \)
-	und 
+	und es gilt
 	\( \ini\left( \tau_{ij} \right) = m_{ji}\epsilon_{i}.\)
 \end{thm}
 
