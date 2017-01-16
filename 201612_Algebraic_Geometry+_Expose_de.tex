@@ -122,7 +122,7 @@
 		\]
 		sodass 
 		\[
-			R_{i}R_{j} \subset R_{i+1} \text{for} i,j \ge 0.
+			R_{i}R_{j} \subset R_{i+1} \text{\ f\"ur \ } i,j \ge 0.
 		\]
 	\end{defn}
 	\begin{bsp}
@@ -151,13 +151,13 @@
 	das unsere Abbildungen von Grad 0 sind,
 	d.h. sie sind jeweils der Form
 	\[
-		f\left( x \right)=x_{1}f_{1} + \dots + x_{k}f_{k}
-	\],
+		f\left( x \right)=x_{1}f_{1} + \dots + x_{k}f_{k},
+	\]
 	dass alle Punkte der Syzygie die folgende Gleichung erf\"ullen:
 	\[
 		a_{1} f_{1} + \dots + a_{n} f_{n} = 0	
 	\]
-	ALso sind unsere Syzygien L\"osungen von linearen Gleichungen.
+	Also sind unsere Syzygien L\"osungen von linearen Gleichungen.
 	
 	Syzygien werden in Computeralgebra System verwendet,
 	um multivariate Gleichungen zu l\"osen\nocite{WA_1}
@@ -187,11 +187,11 @@
 		\end{proof}
 	\end{bsp}	
 	\begin{thm}[Struktursatz f\"ur endlich erzeugte Moduln \"uber Hauptidealringen\cite{Wiki_1}]
-		
+		{\color{red} REPLACE ME }	
 	\end{thm}
 	\begin{bsp}
 		Sei 
-		\( R= k\left[ x \right] \/ \left( x^{n} \right) \),
+		\( R= k\left[ x \right] \big/ \left( x^{n} \right) \),
 		dann sehen die freien Aufl\"osungen von 
 		\( R\big/ \left( x^{m} \right) \) 
 		f\"ur alle 
@@ -204,6 +204,13 @@
 		\end{proof}
 	\end{bsp}
 \section{Syzygientricks}
+	\begin{defn}[GCD,LCM]
+		Im folgenden werden wir f\"ur den kleinsten gemeinsamen Teiler
+		\( \LCM \)
+		und f\"ur den gr\"ossten gemeinsamen Teiler
+		\( GCD \)
+		schreiben
+	\end{defn}
 
 	\begin{nota}[\cite{Eis1}{322}\label{syzygygenerationnotation}]
 		Sei 
@@ -219,7 +226,7 @@
 		Sei
 		\begin{align*}
 			\phi:	& \oplus_{j=1}^{t} S\epsilon_{j} &\to   F \\
-				& \phi\left( \epsilon_{j} \right) &=  m_{j}
+				& \phi\left( \epsilon_{j} \right) &:=  m_{j}
 		\end{align*}
 		die Abbildung eines freien Moduls, dessen Bild
 		\( M \)
@@ -236,7 +243,7 @@
 		\[
 			m_{ij} := m_{i}/\GCD\left( m_{i},m_{j} \right) ,
 		\]
-		wobei wir die 
+		und sonst die 
 		\( \sigma_{ij}\)
 		wie folgt als Elemente von 
 		\( \ker \phi \)
@@ -256,6 +263,16 @@
 		erzeugt wird.
 		\begin{proof}
 			\label{uniquesum}
+			\[
+				\phi\left( \sigma_{ij} \right) 
+				= \phi \left(m_{ji} \epsilon_{i}\right) 
+				- \phi \left(  m_{ij} \epsilon_{j}  \right)
+				= \frac{m_{j}}{\GCD\left( m_{i} ,m_{j} \right) } \dot m_{i} 
+				-\frac{m_{i}}{\GCD\left( m_{i} ,m_{j} \right) } \dot m_{j}
+				= 0 ,
+			\]
+			somit sind die 
+			\( \sigma_{ij} \in \ker \phi \).
 			\( \ker \phi\)
 			ist ein 
 			\( k \)-Vektorraum ,
@@ -304,7 +321,8 @@
 			aus 
 			\( \left( \ker \phi \right)_{n}\).
 			Nehmen wir an, dass 
-			\( \sigma= \sum a_{v} n_{v}^{\epsilon} 
+			\( \sigma= \sum a_{v} n_{v}
+			\in
 			\left( \ker \phi \right)_{n} \).
 			Wenn 
 			\( \sigma \neq 0 \).
@@ -348,7 +366,7 @@
 		\( \tau = \sum n_{ij} \sigma_{ij} \in \ker \phi\)
 		schreiben k\"onnen, 
 		sodass 
-		\( n_{v} m_{v} \)
+		\( n_{v}, m_{v} \)
 		zum gleichen Monom 
 		\( n\in F \)
 		\"aquivalent sind.
@@ -553,7 +571,7 @@
 		mit Basis und Monomordnung
 		\( > \).
 		Seien
-		\( 0 \neq g_{1},\dots,g_{t} \in F\)
+		\( {0 \neq g_{1},\dots,g_{t} \in F} \)
 		und 
 		\( \oplus S \epsilon_{i} \)
 		ein freier Modul mit Basis 
@@ -577,7 +595,7 @@
 		dasselbe Basiselement von
 		\( F \)
 		enthalten,
-		definieren wir
+		definieren wir ein neues
 		\[
 			m_{ij} 
 			= \ini \left( g_{i} \right) 
@@ -594,7 +612,7 @@
 		\( \sigma_{ij} \)
 		Erzeugen die Syzygie auf den 
 		\( \ini \left( g_{i} \right) \)
-		nach \ref{syzygygen}.
+		nach \ref{syzygygen} und sind auch an die dortige Notation angepasst.
 		Desweiteren w\"ahlen wir f\"ur jedes der Indexpaare einen Standardausdruck 
 		\[ 
 			m_{ji} g_{i} -m_{ij} g_{j} = \sum f_{u}^{\left( ij \right) } g_{u} + h_{ij}
@@ -602,7 +620,7 @@
 		f\"ur 
 		\(  m_{ji} g_{i} -m_{ij} g_{j} \)
 		bez\"uglich der
-		\( g_{1},\dots , g_{t} \).
+		\( g_{1},\dots , g_{t} . \)
 		Man kann sehen, 
 		dass 
 		\( \ini \left( f_{u}^{ij} g_{u} \right) < \ini \left( m_{ji}g_{i} \right) \)
@@ -629,6 +647,26 @@
 		\( j\).
 		\begin{proof}
 			{\color{red} REPLACE ME }
+			Der Autor von \cite{Eis1} 
+			meint man sehe dieses Aussage leicht, 
+			doch das stimmt nur,
+			wenn man es einmal gesehen hat:\\
+			``\( \Rightarrow \)'' Wenn die 
+			\( g_{1},\dots,g_{t} \) 
+			eine Gr\"obnerbasis bilden,
+			dann k\"onnen wir, 
+			da es eine \emph{Basis} ist,
+			alle Elemente in den 
+			\( g_{1},\dots,g_{t} \)
+			ohne Rest geschrieben werden.
+			``\(\Leftarrow \)'' Wenn wir alle Elemente ohne Rest
+			\( \left( h_{ij} = 0 \right) \)
+			schreiben koennen, 
+			dann bilden die 
+			\( g_{1},\dots,g_{t} \)
+			ein erzeugendes System.
+			Es fehlt noch die Minimalit\"at,
+			die aus dem folgenden Algorithmus folgt.
 		\end{proof}
 	\end{thm}
 
@@ -641,7 +679,9 @@
 		und 
 		\( g_{1},\dots,g_{t}\)
 		seien  Erzeuger von 
-		\( M \).
+		\( M \), 
+		dann gilt
+		\( M = \ker \phi \)
 		Berechne die Reste
 		\( h_{ij} \).
 		Wenn alle 
@@ -662,7 +702,7 @@
 		erzeugte Untermodul echt gr\"osser als der von
 		\( g_{1},\dots,g_{t}\)
 		erzeugte Untermodul ist, 
-		und damit terminiert der Prozess nach endlich vielen Schritten.
+		und damit terminiert der Prozess nach endlich vielen Schritten. \\
 		Die obere Schranke 
 		\[
 			b=\left( 
@@ -717,11 +757,11 @@
 		oder
 		\[
 			\ini\left( m g_{u} \right) = \ini\left( n g_{v} \right) 
-			\left( \text{bis auf Vielfachheit} \right) \text{but} u < v.
+			\left( \text{bis auf Vielfachheit} \right) \text{\ und \ } u < v.
 		\].
 		Die
 		\( \tau_{ij} \) 
-		erzeugen die Syuygien auf den
+		erzeugen die Syzygien auf den
 		\( g_{i} \).
 		Insbesondere sind die
 		\( \tau_{ij} \)
@@ -737,6 +777,34 @@
 			Es gilt 
 			\[
 				m_{ji} \ini \left( g_{i} \right) 
+				= \frac{
+					\ini \left(g_{j}\right) 
+				}{
+					\GCD\left( 
+					\ini \left( g_{i} \right),
+					\ini \left( g_{j} \right) 
+					\right)
+				}
+				\cdot 
+				\ini \left( g_{i} \right) 
+				= \frac{
+					\ini \left( g_{j}  \right)
+					\cdot \left( g_{i} \right)
+				}{
+					\GCD\left( 
+					\ini \left( g_{i} \right),
+					\ini \left( g_{j} \right)
+					\right)
+				}
+				=\frac{
+					\ini \left( g_{i} \right)
+				}{
+					\GCD\left( 
+					\ini \left( g_{i} \right),
+					\ini \left( g_{j} \right)
+					\right)
+				}
+				\ini \left( g_{j} \right)
 				= m_{ij} \ini \left( g_{j} \right),
 			\]
 			und diese Terme sind nach Annahme gr\"osser als alle,
@@ -757,11 +825,11 @@
 			\( m_{ji} \epsilon_{i} 
 			> m_{ij}\epsilon_{j} \)
 			und somit sind wir im Fall 
-			\( (a) \).
+			\( (a) \).\\
 			Jetzt ist noch zu zeigen,
 			dass die 
 			\( \tau_{ij} \)
-			eine Gr\"obnerbasis bilden. \\
+			eine Gr\"obnerbasis bilden.  \\
 			Sei 
 			\( \tau = \sum f_{v} \epsilon_{v}\)
 			eine beliebige Syzygie.
@@ -783,9 +851,10 @@
 			\(n_{v} \epsilon_{v}
 			=\ini\left( f_{v}\epsilon_{v} \right) \).
 			Da diese Terme sich gegenseitig nicht k\"urzen,
+			schliesslich befinden wir uns in einer direkten Summe,
 			gilt
-			\( \ini\left( \sum f_{v}\epsilon_{v} \right)=
-			n_{i}\epsilon_{i}\)
+			\( { \ini\left( \sum f_{v}\epsilon_{v} \right)=
+			n_{i}\epsilon_{i} }\)
 			f\"ur ein 
 			\( i\).
 			Sei
@@ -838,6 +907,7 @@
 			und damit folgt die Behauptung.
 		\end{proof}
 	\end{thm}
+	Dieser komplette Vortrag mit allen LaTeX Documenten findet sich unter \cite{GitHub927589452}.
 
 \input{./bibtex}
 
