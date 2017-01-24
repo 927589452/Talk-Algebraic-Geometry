@@ -2,7 +2,7 @@
 %!TeX encoding = utf8
 %!TEX root = ./test.tex
 
-\begin{struktogramm}(95,32)
+\begin{struktogramm}(125,32)
 	\assign{
 		\begin{declaration}[Notation aus \ref{criterionnotation}]
 			\description{ \( F \) }{ freier Module \"uber S}
@@ -46,13 +46,17 @@
 					mit 
 					\( g_{u} \in Groebner \)
 					darzustellen }
+				\ifthenelse{2}{1}%
+				{ \(h_{ij} \neq 0 \)}{\sTrue}{\sFalse}
+					\assign{ \( Groebner = Groebner \cup h_{ij}\)}
+				\change
+				\ifend
 			\change
 				\assign{\( h_{ij} \) }
 			\ifend
 			\assign{\(j++\)}
 		\whileend
-		\assign{\(i++\)}
-		\assign{ }
+		\assign{\(i++\)}	
 	\whileend
 		
 	
