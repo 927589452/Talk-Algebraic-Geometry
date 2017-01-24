@@ -4,12 +4,12 @@
 
 \begin{struktogramm}(95,32)
 	\assign{
-		\begin{declaration}[Notation aus ref{criterionnotation}]
+		\begin{declaration}[Notation aus \ref{criterionnotation}]
 			\description{ \( F \) }{ freier Module \"uber S}
 			\description{ \( > \) }{ Monomordnung }
-			\description{ \( g_{1},\dots,g_{t} \) }{
+			\description{ Groebner=\( g_{1},\dots,g_{t} \) }{
 				\( 0 \neq  g_{1},\dots,g_{t} \in F \) }
-			\description{ \(\oplus S \epsilon_{i}\) }{
+			\description{ \(M:=\oplus S \epsilon_{i}\) }{
 				ein freier Modul mit Basis 
 				\( \left\{ \epsilon_{i} \right\} \) }
 			\description{\( \phi \) }{
@@ -18,5 +18,43 @@
 			}
 		\end{declaration}%
 	}%
+	\assign{ \(i=1\) }
+	\while{	\(i \le t\)}
+		\assign{ \( j=1 \) }
+		\while{ \( j \le t \) }
+			\ifthenelse{2}{1}%
+			{\( ini\left( g_{i} \right) \)
+			und
+			\( ini\left( g_{j} \right)
+			\)
+			dasselber Basiselement enthalten }{\sTrue}{\sFalse}
+				\assign{ \( 
+					m_{ij}= ini \left( g_{i} \right) 
+					GCD \left( 
+					ini \left( g_{i} \right),
+					ini \left( g_{j} \right) 
+					\right) 
+				\)}
+				\assign{ \( 
+					\sigma_{ij}= 
+					m_{ji}\epsilon_{i} -m_{ij}\epsilon_{j}
+				\)}
+				\assign{\( tmp: = m_{ji} g_{i} - m_{ij} g_{j} \)}
+				\assign{ nutze Divisionsalgorithmus um \( tmp \) 
+					als 
+					\( \sum f_{u}^{\left( ij \right) } g_{u} + h_{ij} \)
+					mit 
+					\( g_{u} \in Groebner \)
+					darzustellen }
+			\change
+				\assign{\( h_{ij} \) }
+			\ifend
+			\assign{\(j++\)}
+		\whileend
+		\assign{\(i++\)}
+		\assign{ }
+	\whileend
+		
+	
 \end{struktogramm}
 
