@@ -1,15 +1,33 @@
 %!TeX spellcheck = de_DE
 %!TeX encoding = utf8
-%!TEX root = ./test.tex
-
-\begin{struktogramm}(125,32)
-	        \assign{
-			\begin{declaration}
-				\description{ \( F \) }{ freier 
+%!TEX root = ./test_div.tex
+\hbadness=10000
+\sProofOn
+\descriptionwidth=40pt
+\begin{struktogramm}(150,20)
+	\assign{ 
+		\begin{declaration}[]
+				\description{ \( F \) }{freier 
 				\( S \)-Modul mit Basis }
 				\description{ \( > \) }{ Monomordnung }
-				\description{ \( f,g_{1} , \dots ,g_{t} \in F \)}{}
-			\end{declaration}
-		}
-		
+				\description{ \( f \) }{ \( \in F \) }
+				\description{ 	\(G= g_{1} , \dots ,g_{t}   \)}{\(  \in F \)}
+				\description{ \( m \)}{leere liste, wird am Ende fuer den Standardausdruck wichtig }
+				\description{ \( s \)}{ leere liste}
+		\end{declaration} %
+	}
+	\assign{ \( j= 1 \)}
+	\assign{ \(f':= f\) }
+	\assign{ \( m:= ini \left( f' \right) \)}
+	\while{ \( \exists  g_{q} \in G \ : m | ini \left( g_{q} \right) \)}
+		\assign{ \( i = \arg \max \left\{ g_{q} \in G \ :
+			m | ini \left( g_{q} \right) \right\} \)}
+		\assign{ \( s_{j} := i \)}
+		\assign{ \( m_{j} := m / ini\left( g_{s_{j}} \right) \)}
+		\assign{ \( f':= f-\sum_{l=1}^{j} g_{s_{l}} * m_{l} \)}
+		\assign{ \( m:= ini \left( f' \right) \)}
+
+		\assign{ \( j:=j+1 \)}
+	\whileend
+	
 \end{struktogramm}
