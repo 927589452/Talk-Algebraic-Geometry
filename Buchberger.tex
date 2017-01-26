@@ -2,7 +2,7 @@
 %!TeX encoding = utf8
 %!TEX root = ./test.tex
 
-\begin{struktogramm}(95,18)
+\begin{struktogramm}(150,180)
 	\assign{
 		\begin{declaration}[Notation aus \ref{criterionnotation}]
 			\description{ \( F \) }{ freier Module \"uber S}
@@ -12,10 +12,10 @@
 			\description{ \(M:=\oplus S \epsilon_{i}\) }{
 				ein freier Modul mit Basis 
 				\( \left\{ \epsilon_{i} \right\} \) }
-			\description{ \( \phi \) }{
+			\description{ \( \phi \) }{ %
 				\begin{align*}
 					 \phi:& \oplus S \epsilon_{i}  \to &&F \\
-					 &\epsilon_{i}  \mapsto &&g_{i}
+					 &\epsilon_{i}  \mapsto &&g_{i} %
 				 \end{align*}}
 		\end{declaration} }
 	\assign{ \(i=1\) }
@@ -46,7 +46,7 @@
 					mit 
 					\( g_{u} \in Groebner \)
 					darzustellen }
-				\ifthenelse{5}{1}%
+				\ifthenelse{5}{3}%
 				{ \(h_{ij} \neq 0 \)}{\sTrue}{\sFalse}
 					\assign{ \( Groebner = Groebner \cup h_{ij}\)}
 				\change
