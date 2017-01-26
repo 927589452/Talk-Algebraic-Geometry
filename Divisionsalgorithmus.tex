@@ -12,18 +12,18 @@
 				\description{ \( > \) }{ Monomordnung }
 				\description{ \( f \) }{ \( \in F \) }
 				\description{ 	\(G= g_{1} , \dots ,g_{t}   \)}{\(  \in F \)}
-				\description{ \( m \)}{leere liste, wird am Ende fuer den Standardausdruck wichtig }
-				\description{ \( s \)}{ leere liste}
 		\end{declaration} %
 	}
+	\assign{ \( s= \left[  \right] \)}
+	\assign{ \( m=\left[  \right] \)}
 	\assign{ \( j= 1 \)}
 	\assign{ \(f':= f\) }
-	\assign{ \( m:= ini \left( f' \right) \)}
-	\while{ \( \exists  g_{q} \in G \ : m | ini \left( g_{q} \right) \)}
+	\assign{ \( \bar{m}:= ini \left( f' \right) \)}
+	\while{ \( \exists  g_{q} \in G \ :\bar{m} | ini \left( g_{q} \right) \)}
 		\assign{ \( i = \arg \max \left\{ g_{q} \in G \ :
 			m | ini \left( g_{q} \right) \right\} \)}
 		\assign{ \( s_{j} := i \)}
-		\assign{ \( m_{j} := m / ini\left( g_{s_{j}} \right) \)}
+		\assign{ \( m_{j} := \bar{m} / ini\left( g_{s_{j}} \right) \)}
 		\assign{ \( f':= f-\sum_{l=1}^{j} g_{s_{l}} * m_{l} \)}
 		\assign{ \( m:= ini \left( f' \right) \)}
 
